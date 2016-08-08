@@ -1,0 +1,17 @@
+D:\WAG_tests\WAG_tests\WAG_tests\bin\Debug\WAG_tests.dll
+D:\WAG_tests\WAG_tests\WAG_tests\bin\Debug\WAG_tests.pdb
+D:\WAG_tests\WAG_tests\WAG_tests\bin\Debug\Selenium.WebDriverBackedSelenium.dll
+D:\WAG_tests\WAG_tests\WAG_tests\bin\Debug\ThoughtWorks.Selenium.Core.dll
+D:\WAG_tests\WAG_tests\WAG_tests\bin\Debug\WebDriver.dll
+D:\WAG_tests\WAG_tests\WAG_tests\bin\Debug\WebDriver.Support.dll
+D:\WAG_tests\WAG_tests\WAG_tests\bin\Debug\Selenium.WebDriverBackedSelenium.pdb
+D:\WAG_tests\WAG_tests\WAG_tests\bin\Debug\Selenium.WebDriverBackedSelenium.xml
+D:\WAG_tests\WAG_tests\WAG_tests\bin\Debug\ThoughtWorks.Selenium.Core.pdb
+D:\WAG_tests\WAG_tests\WAG_tests\bin\Debug\ThoughtWorks.Selenium.Core.xml
+D:\WAG_tests\WAG_tests\WAG_tests\bin\Debug\WebDriver.xml
+D:\WAG_tests\WAG_tests\WAG_tests\bin\Debug\WebDriver.Support.xml
+D:\WAG_tests\WAG_tests\WAG_tests\obj\Debug\WAG_tests.csprojResolveAssemblyReference.cache
+D:\WAG_tests\WAG_tests\WAG_tests\obj\Debug\WAG_tests.dll
+D:\WAG_tests\WAG_tests\WAG_tests\obj\Debug\WAG_tests.pdb
+d:\WAG_tests\WAG_tests\WAG_tests\bin\Debug\nunit.framework.dll
+d:\WAG_tests\WAG_tests\WAG_tests\bin\Debug\nunit.framework.xml
