@@ -5,6 +5,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Chrome;
 using NUnit.Framework;
 
 namespace WAG_tests
@@ -12,14 +13,14 @@ namespace WAG_tests
    [TestFixture()]
     public class BuyingGoods
     {
-        FirefoxDriver firefox;
+       ChromeDriver firefox;
         WebDriverWait wait;
        // ChromeDriver chrome;
 
         [Test()]
         public void BuingSDAWithoutServises()
         {
-            firefox = new FirefoxDriver();
+            firefox = new ChromeDriver();
             firefox.Manage().Window.Maximize();
             wait = new WebDriverWait(firefox, TimeSpan.FromSeconds(5));
 
@@ -82,7 +83,7 @@ namespace WAG_tests
         [Test()]
         public void BuingSDAoutOfStockWithOption()
         {
-            firefox = new FirefoxDriver();
+            firefox = new ChromeDriver();
             firefox.Manage().Window.Maximize();
             wait = new WebDriverWait(firefox, TimeSpan.FromSeconds(5));
 

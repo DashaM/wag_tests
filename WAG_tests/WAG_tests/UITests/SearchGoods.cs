@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Chrome;
 using System;
 using NUnit.Framework;
 
@@ -10,13 +11,13 @@ namespace WAG_tests
     [TestFixture()]
     public class SearchGoods
     {
-        private FirefoxDriver firefox;
+        private ChromeDriver firefox;
 
 
         [Test()]
         public void SearchBrand()
         {
-            firefox = new FirefoxDriver();
+            firefox = new ChromeDriver();
             firefox.Manage().Window.Maximize();
             try
             {
@@ -36,7 +37,7 @@ namespace WAG_tests
         [Test()]
         public void EmptySearch()
         {
-            firefox = new FirefoxDriver();
+            firefox = new ChromeDriver();
             firefox.Manage().Window.Maximize();
             try
             {
