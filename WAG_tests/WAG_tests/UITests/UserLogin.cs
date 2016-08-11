@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Chrome;
 using System;
 using NUnit.Framework;
 
@@ -10,13 +11,13 @@ namespace WAG_tests
     [TestFixture()]
     public class UserLogin
     {
-        FirefoxDriver firefox;
+        ChromeDriver firefox;
 
 
        [Test()]
         public void WrongDataLogin()
         {
-             firefox = new FirefoxDriver();
+            firefox = new ChromeDriver();
             firefox.Manage().Window.Maximize();
            try
            {
@@ -42,7 +43,7 @@ namespace WAG_tests
        [Test()]
         public void CorrectDataLogin()
         {
-            firefox = new FirefoxDriver();
+            firefox = new ChromeDriver();
             firefox.Manage().Window.Maximize();
 
            try
