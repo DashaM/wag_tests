@@ -11,13 +11,13 @@ namespace WAG_tests
     [TestFixture()]
     public class SearchGoods
     {
-        private ChromeDriver firefox;
+        private FirefoxDriver firefox;
 
 
         [Test()]
         public void SearchBrand()
         {
-            firefox = new ChromeDriver();
+            firefox = new FirefoxDriver();
             firefox.Manage().Window.Maximize();
             try
             {
@@ -37,7 +37,7 @@ namespace WAG_tests
         [Test()]
         public void EmptySearch()
         {
-            firefox = new ChromeDriver();
+            firefox = new FirefoxDriver();
             firefox.Manage().Window.Maximize();
             try
             {

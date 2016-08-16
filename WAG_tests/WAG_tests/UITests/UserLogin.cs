@@ -2,7 +2,6 @@
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Chrome;
 using System;
 using NUnit.Framework;
 
@@ -11,13 +10,13 @@ namespace WAG_tests
     [TestFixture()]
     public class UserLogin
     {
-        ChromeDriver firefox;
+        FirefoxDriver firefox;
 
 
        [Test()]
         public void WrongDataLogin()
         {
-            firefox = new ChromeDriver();
+             firefox = new FirefoxDriver();
             firefox.Manage().Window.Maximize();
            try
            {
@@ -26,7 +25,7 @@ namespace WAG_tests
                firefox.FindElement(By.LinkText("Log ind")).Click();
                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
                firefox.FindElement(By.Id("email_address")).SendKeys("test.yhy@yopmail.com");
-               firefox.FindElement(By.Id("password")).SendKeys("qqqqqq");
+               firefox.FindElement(By.Id("password")).SendKeys("qqq");
                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
                firefox.FindElement(By.XPath("//button[@type='submit']")).Click();
                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
@@ -43,7 +42,7 @@ namespace WAG_tests
        [Test()]
         public void CorrectDataLogin()
         {
-            firefox = new ChromeDriver();
+            firefox = new FirefoxDriver();
             firefox.Manage().Window.Maximize();
 
            try

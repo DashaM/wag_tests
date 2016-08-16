@@ -72,6 +72,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="UITests\BuingDelivery.cs" />
     <Compile Include="UITests\BuingSDA.cs" />
     <Compile Include="UITests\Copy.cs" />
     <Compile Include="UITests\SearchGoods.cs" />

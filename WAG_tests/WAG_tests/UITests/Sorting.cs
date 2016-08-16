@@ -12,13 +12,13 @@ namespace WAG_tests.UITests
    [TestFixture()]
     public class Sorting
     {
-       ChromeDriver firefox;
+       FirefoxDriver firefox;
 
 
         [Test()]
         public void MovetoSecondResultsPage()
         {
-            firefox = new ChromeDriver();
+            firefox = new FirefoxDriver();
             firefox.Manage().Window.Maximize();
             try
             {
