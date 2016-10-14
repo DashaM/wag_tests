@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace WAG_tests
 {
     [TestFixture()]
-    public class UserLogin
+    public class UserLogin : TestBase
     {
         FirefoxDriver firefox;
 

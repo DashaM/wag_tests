@@ -10,7 +10,7 @@ using NUnit.Framework;
 namespace WAG_tests.UITests
 {
    [TestFixture()]
-    public class Sorting
+    public class Sorting : TestBase
     {
        FirefoxDriver firefox;
 

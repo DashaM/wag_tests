@@ -9,7 +9,7 @@ using NUnit.Framework;
 namespace WAG_tests
 {
     [TestFixture()]
-    public class SearchGoods
+    public class SearchGoods : TestBase
     {
         private FirefoxDriver firefox;
 

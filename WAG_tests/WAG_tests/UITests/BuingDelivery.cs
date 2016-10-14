@@ -5,12 +5,14 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Chrome;
 using NUnit.Framework;
+using System.Collections.Generic;
 
 namespace WAG_tests
 {
     [TestFixture()]
-    public class BuyingDelivery
+    public class BuyingDelivery : TestBase
     {
         FirefoxDriver firefox;
         WebDriverWait wait;
@@ -28,7 +30,8 @@ namespace WAG_tests
 
                 firefox.Navigate()
                     .GoToUrl("http://www.whiteaway.com/product/levering-indbaering-montering/");
-
+                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                Thread.Sleep(3000);
                 firefox.FindElement(By.ClassName("buy-btn-wrap")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
                 firefox.FindElement(By.XPath("//div[@class='modal-footer']//button[.='Gå til kurv']")).Click();

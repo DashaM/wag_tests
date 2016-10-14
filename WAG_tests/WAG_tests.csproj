@@ -72,7 +72,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="TestBase.cs" />
     <Compile Include="UITests\BuingDelivery.cs" />
     <Compile Include="UITests\BuingSDA.cs" />
     <Compile Include="UITests\Copy.cs" />

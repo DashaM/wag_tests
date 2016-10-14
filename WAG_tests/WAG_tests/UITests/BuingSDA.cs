@@ -10,7 +10,7 @@ using NUnit.Framework;
 namespace WAG_tests
 {
    [TestFixture()]
-    public class BuyingGoods
+    public class BuyingGoods : TestBase
     {
         FirefoxDriver firefox;
         WebDriverWait wait;
