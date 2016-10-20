@@ -1,5 +1,5 @@
-using System;
-using System.Collections.Generic;
+﻿using System;
+
 using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -9,12 +9,12 @@ using NUnit.Framework;
 
 namespace WAG_tests
 {
-   [TestFixture()]
-    public class BuyingGoods : TestBase
+    [TestFixture()]
+    public class BuyingGoods
     {
         FirefoxDriver firefox;
         WebDriverWait wait;
-       // ChromeDriver chrome;
+        // ChromeDriver chrome;
 
         [Test()]
         public void BuingSDAWithoutServises()
@@ -26,26 +26,30 @@ namespace WAG_tests
             try
             {
 
+
+
                 firefox.Navigate()
                     .GoToUrl("http://whiteaway.com/stoevsuger/gulvrenser/product/nilfisk-nilfisk-smart-green-28/");
 
-                firefox.FindElement(By.ClassName("buy-btn-wrap")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
-                firefox.FindElement(By.XPath("(//button[@type='button'])[34]")).Click();
+                firefox.FindElement(By.XPath("//div[3]/div[4]/div[1]/section[3]/section[2]/div/div[2]/button")).Click();
+                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+                firefox.FindElement(By.LinkText("Kurv")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
 
-                firefox.FindElement(By.XPath("/html/body/div[2]/div[4]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]"))
-                    .Click();
+                firefox.FindElement(By.LinkText("Gå til bestilling")).Click();
 
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
 
+                firefox.FindElement(By.XPath("//div[@class='list-group']/div/label[2]/div/div/div[1]/div/input")).Click();
+
+                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                Thread.Sleep(3000);
+               
+
                 firefox.FindElement(
-                    By.XPath(
-                        "/html/body/div[4]/div/div/div/ng-view/div[2]/form/div[1]/div[1]/div/div/div[2]/div/div/div/label[3]/div/div/div[1]/div/div"))
-                    .Click();
-                firefox.FindElement(
-                    By.XPath("//div[@id='content']/div/div/div/ng-view/div[2]/form/div/div[2]/div[2]/label/span"))
-                    .Click();
+                     By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label")).Click();
+
+
                 firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
 
                 firefox.FindElement(By.XPath("//button[@type='submit']")).Click();
@@ -60,7 +64,7 @@ namespace WAG_tests
                 Thread.Sleep(3000);
                 firefox.FindElement(
                     By.XPath(
-                        "//div[@id='content']/div/div/div/ng-view/div[2]/div/div/div[2]/div[4]/div[2]/div/label/div/div/div/div/div[2]/div"))
+                        "/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[4]/div[2]/div/label/div/div[1]/div/div"))
                     .Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                 Thread.Sleep(3000);
@@ -71,7 +75,7 @@ namespace WAG_tests
                 firefox.FindElement(By.XPath("//button[@type='button']")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                 Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("/html/body/div[2]/div[3]/div[7]/a")).Click();
+                firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[7]/a")).Click();
                 Thread.Sleep(3000);
             }
             finally { firefox.Quit(); }
