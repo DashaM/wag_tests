@@ -26,7 +26,7 @@ namespace WAG_tests
                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
                firefox.FindElement(By.Id("email_address")).SendKeys("test.yhy@yopmail.com");
                firefox.FindElement(By.Id("password")).SendKeys("qqq");
-               firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
+               firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                firefox.FindElement(By.XPath("//button[@type='submit']")).Click();
                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
 
@@ -52,7 +52,7 @@ namespace WAG_tests
                firefox.FindElement(By.LinkText("Log ind")).Click();
                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
                firefox.FindElement(By.Id("email_address")).SendKeys("test.yhy@yopmail.com");
-               firefox.FindElement(By.Id("password")).SendKeys("d8KU9");
+               firefox.FindElement(By.Id("password")).SendKeys("l5qjW");
                firefox.FindElement(By.XPath("//button[@type='submit']")).Click();
                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
                firefox.FindElement(By.LinkText("Log af")).Click();
