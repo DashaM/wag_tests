@@ -32,13 +32,16 @@ namespace WAG_tests
                     .GoToUrl("http://www.whiteaway.com/product/levering-indbaering-montering/");
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                 Thread.Sleep(3000);
-                firefox.FindElement(By.ClassName("buy-btn-wrap")).Click();
+                firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div[1]/section[3]/section[2]/div/div[2]/button")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-                firefox.FindElement(By.XPath("//div[@class='modal-footer']//button[.='Gå til kurv']")).Click();
+                firefox.FindElement(By.LinkText("Kurv")).Click();
+                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+                firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]/a")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
 
-                firefox.FindElement(By.XPath("/html/body/div[2]/div[4]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]"))
-                    .Click();
+
+               // firefox.FindElement(By.XPath("/html/body/div[2]/div[4]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]"))
+                  //  .Click();
 
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
 
