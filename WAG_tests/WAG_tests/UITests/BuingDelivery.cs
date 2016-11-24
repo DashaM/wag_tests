@@ -37,17 +37,25 @@ namespace WAG_tests
                 firefox.FindElement(By.LinkText("Kurv")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
                 firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]/a")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
 
-
+                Thread.Sleep(4000);
                // firefox.FindElement(By.XPath("/html/body/div[2]/div[4]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]"))
                   //  .Click();
 
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+               // firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
 
+              //  firefox.FindElement(By.Id("label_for_services_call_number")).SendKeys("77777777");
+                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                Thread.Sleep(3000);
                 firefox.FindElement(By.Id("label_for_services_call_number")).SendKeys("77777777");
-              //  firefox.FindElement(By.CssSelector("span.control-indicator")).Click();
-              //  firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+               // firefox.FindElement(By.CssSelector("span.control-indicator")).Click();
+                firefox.FindElement(
+                     By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label")).Click();
+
+
+                firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+               // firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
                 
                 firefox.FindElement(By.XPath("//div[@class='col-md-8']/div[3]/button")).Click();
 
@@ -66,13 +74,13 @@ namespace WAG_tests
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                 Thread.Sleep(3000);
                // firefox.FindElement(By.Id("label_for_services_call_number")).SendKeys("77777777");
-                firefox.FindElement(By.CssSelector("span.control-indicator")).Click();
-                firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+               // firefox.FindElement(By.CssSelector("span.control-indicator")).Click();
+                //firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                 firefox.FindElement(By.XPath("//div[@class='col-md-8']/div[3]/button")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                 Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("//div[@class='col-md-8']/form/div[5]/button")).Click();
+                firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/form/div[6]/button")).Click();
 
 
                 
@@ -82,7 +90,7 @@ namespace WAG_tests
                 Thread.Sleep(3000);
                 firefox.FindElement(
                     By.XPath(
-                        "//div[@id='content']/div/div/div/ng-view/div[2]/div/div/div[2]/div[4]/div[2]/div/label/div/div/div/div/div[2]/div"))
+                        "/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[4]/div[2]/div/label/div/div[1]/div/div/div[1]/span"))
                     .Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                 Thread.Sleep(3000);
@@ -93,7 +101,7 @@ namespace WAG_tests
                 firefox.FindElement(By.XPath("//button[@type='button']")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                 Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("/html/body/div[2]/div[3]/div[7]/a")).Click();
+                firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[7]/a")).Click();
                 Thread.Sleep(3000);
             }
             finally { firefox.Quit(); }
