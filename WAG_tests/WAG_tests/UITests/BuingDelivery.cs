@@ -35,8 +35,9 @@ namespace WAG_tests
                 firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/section[2]/div/div[2]/button")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
                 firefox.FindElement(By.LinkText("Kurv")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-                firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]/a")).Click();
+                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                Thread.Sleep(4000);
+                firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]/a")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
 
                 Thread.Sleep(4000);

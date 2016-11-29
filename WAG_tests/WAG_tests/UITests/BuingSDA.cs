@@ -97,8 +97,10 @@ namespace WAG_tests
                     .GoToUrl("http://www.whiteaway.com/koekkenudstyr/blender/blender/product/kitchenaid-a-m-0-75l-krom/");
 
                 firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/section[2]/div/div[2]/button")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-                
+                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+               // Thread.Sleep(3000);
+
+
                 firefox.FindElement(By.LinkText("Kurv")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
                 firefox.FindElement(By.LinkText("Gå til bestilling")).Click();
