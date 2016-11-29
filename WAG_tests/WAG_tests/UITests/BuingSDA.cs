@@ -30,8 +30,8 @@ namespace WAG_tests
                     .GoToUrl("http://whiteaway.com/stoevsuger/gulvrenser/product/nilfisk-nilfisk-smart-green-28/");
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
 
-                firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div[1]/section[3]/section[2]/div/div[2]/button")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+                firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/section[2]/div/div[2]/button")).Click();
+                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
                 firefox.FindElement(By.LinkText("Kurv")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
 
@@ -76,7 +76,7 @@ namespace WAG_tests
                 firefox.FindElement(By.XPath("//button[@type='button']")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                 Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[7]/a")).Click();
+                firefox.FindElement(By.XPath("/html/body/div[3]/div[2]/div[7]/a")).Click();
                 Thread.Sleep(3000);
             }
             finally { firefox.Quit(); }
@@ -96,7 +96,7 @@ namespace WAG_tests
                 firefox.Navigate()
                     .GoToUrl("http://www.whiteaway.com/koekkenudstyr/blender/blender/product/kitchenaid-a-m-0-75l-krom/");
 
-                firefox.FindElement(By.XPath("//div[3]/div[4]/div[1]/section[3]/section[2]/div/div[2]/button")).Click();
+                firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/section[2]/div/div[2]/button")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
                 
                 firefox.FindElement(By.LinkText("Kurv")).Click();
@@ -160,7 +160,7 @@ namespace WAG_tests
                 firefox.FindElement(By.XPath("//button[@type='button']")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                 Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[7]/a")).Click();
+                firefox.FindElement(By.XPath("/html/body/div[3]/div[2]/div[7]/a")).Click();
                 Thread.Sleep(3000);
             }
             finally { firefox.Quit(); }
