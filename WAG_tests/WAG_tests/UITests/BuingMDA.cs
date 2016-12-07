@@ -18,15 +18,35 @@ namespace WAG_tests
         WebDriverWait wait;
         // ChromeDriver chrome;
 
-        [Test()]
-        public void BuingMDA()
+        [SetUp]
+        public void StartBrowser()
         {
             firefox = new FirefoxDriver();
             firefox.Manage().Window.Maximize();
             wait = new WebDriverWait(firefox, TimeSpan.FromSeconds(5));
+        }
 
-            try
+
+        [TearDown]
+        public void StopBrowser()
+        {
+            if (firefox != null)
             {
+                firefox.Quit();
+                firefox = null;
+            }
+        }
+
+
+        [Test()]
+        public void BuingMDA()
+        {
+           // firefox = new FirefoxDriver();
+           // firefox.Manage().Window.Maximize();
+           // wait = new WebDriverWait(firefox, TimeSpan.FromSeconds(5));
+
+           // try
+           // {
 
                 firefox.Navigate()
                     .GoToUrl("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/bosch-waw32568sn-topmodel/");
@@ -98,8 +118,8 @@ namespace WAG_tests
                 Thread.Sleep(3000);
                 firefox.FindElement(By.XPath("/html/body/div[3]/div[2]/div[7]/a")).Click();
                 Thread.Sleep(3000);
-            }
-            finally { firefox.Quit(); }
+           // }
+           // finally { firefox.Quit(); }
 
         }
 
@@ -115,12 +135,12 @@ namespace WAG_tests
         [Test()]
         public void BuingSeveralMDAsWithSlots()
         {
-            firefox = new FirefoxDriver();
-            firefox.Manage().Window.Maximize();
-            wait = new WebDriverWait(firefox, TimeSpan.FromSeconds(5));
+           // firefox = new FirefoxDriver();
+           // firefox.Manage().Window.Maximize();
+           // wait = new WebDriverWait(firefox, TimeSpan.FromSeconds(5));
 
-            try
-            {
+          //  try
+          //  {
 
                 firefox.Navigate()
                     .GoToUrl("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/bosch-waw32568sn-topmodel/");
@@ -167,7 +187,7 @@ namespace WAG_tests
                 Thread.Sleep(4000);
                 firefox.FindElement(By.Id("label_for_services_call_number")).SendKeys("77777777");
                 // firefox.FindElement(By.CssSelector("span.control-indicator")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
                 Thread.Sleep(4000);
                 firefox.FindElement(
                      By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[3]/div[2]/label")).Click();
@@ -201,8 +221,8 @@ namespace WAG_tests
                 Thread.Sleep(3000);
                 firefox.FindElement(By.XPath("/html/body/div[3]/div[2]/div[7]/a")).Click();
                 Thread.Sleep(3000);
-            }
-            finally { firefox.Quit(); }
+           // }
+           // finally { firefox.Quit(); }
 
         }
 
@@ -218,12 +238,12 @@ namespace WAG_tests
         [Test()]
         public void BuingMDAWithSlots()
         {
-            firefox = new FirefoxDriver();
-            firefox.Manage().Window.Maximize();
-            wait = new WebDriverWait(firefox, TimeSpan.FromSeconds(5));
+            //firefox = new FirefoxDriver();
+           // firefox.Manage().Window.Maximize();
+           // wait = new WebDriverWait(firefox, TimeSpan.FromSeconds(5));
 
-            try
-            {
+            //try
+           // {
 
                 firefox.Navigate()
                     .GoToUrl("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/bosch-waw32568sn-topmodel/");
@@ -295,8 +315,8 @@ namespace WAG_tests
                 Thread.Sleep(3000);
                 firefox.FindElement(By.XPath("/html/body/div[3]/div[2]/div[7]/a")).Click();
                 Thread.Sleep(3000);
-            }
-            finally { firefox.Quit(); }
+          //  }
+           // finally { firefox.Quit(); }
 
         }
 
@@ -307,12 +327,12 @@ namespace WAG_tests
         [Test()]
         public void BuingMDAandSDA()
         {
-            firefox = new FirefoxDriver();
-            firefox.Manage().Window.Maximize();
-            wait = new WebDriverWait(firefox, TimeSpan.FromSeconds(5));
+            //firefox = new FirefoxDriver();
+           // firefox.Manage().Window.Maximize();
+           // wait = new WebDriverWait(firefox, TimeSpan.FromSeconds(5));
 
-            try
-            {
+           // try
+           // {
 
                 firefox.Navigate()
                     .GoToUrl("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/bosch-waw32568sn-topmodel/");
@@ -395,8 +415,8 @@ namespace WAG_tests
                 Thread.Sleep(3000);
                 firefox.FindElement(By.XPath("/html/body/div[3]/div[2]/div[7]/a")).Click();
                 Thread.Sleep(3000);
-            }
-            finally { firefox.Quit(); }
+           // }
+           // finally { firefox.Quit(); }
 
         }
 

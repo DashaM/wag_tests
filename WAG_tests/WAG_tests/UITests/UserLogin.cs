@@ -12,14 +12,20 @@ namespace WAG_tests
     {
         FirefoxDriver firefox;
 
+    [SetUp]
+        public void StartBrowser()
+        {
+            firefox = new FirefoxDriver();
+            firefox.Manage().Window.Maximize();
+        }
 
-       [Test()]
+        [Test()]
         public void WrongDataLogin()
         {
-             firefox = new FirefoxDriver();
-            firefox.Manage().Window.Maximize();
-           try
-           {
+             //firefox = new FirefoxDriver();
+           // firefox.Manage().Window.Maximize();
+          // try
+          // {
                //chrome = new ChromeDriver(@"D:\WAG_tests");
                firefox.Navigate().GoToUrl("http://whiteaway.com/");
                firefox.FindElement(By.LinkText("Log ind")).Click();
@@ -32,8 +38,18 @@ namespace WAG_tests
 
                firefox.FindElement(By.CssSelector("div.alert.alert-danger"))
                    .Text.Equals("Fejl: E-mail -adressen eller kodeordet blev ikke genkendt. ");
-           }
-           finally { firefox.Quit(); }
+          // }
+          // finally { firefox.Quit(); }
+        }
+
+        [TearDown]
+        public void StopBrowser()
+        {
+            if (firefox != null)
+            {
+                firefox.Quit();
+                firefox = null;
+            }
         }
 
 
@@ -42,11 +58,11 @@ namespace WAG_tests
        [Test()]
         public void CorrectDataLogin()
         {
-            firefox = new FirefoxDriver();
-            firefox.Manage().Window.Maximize();
+           // firefox = new FirefoxDriver();
+           // firefox.Manage().Window.Maximize();
 
-           try
-           {
+          // try
+          // {
                // chrome = new ChromeDriver(@"D:\WAG_tests");
                firefox.Navigate().GoToUrl("http://prelive.whiteaway.com/");
                firefox.FindElement(By.LinkText("Log ind")).Click();
@@ -57,7 +73,7 @@ namespace WAG_tests
                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
                firefox.FindElement(By.LinkText("Log af")).Click();
                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
-           } finally { firefox.Quit(); }
+           //} finally { firefox.Quit(); }
         }
 
     }

@@ -18,15 +18,36 @@ namespace WAG_tests
         WebDriverWait wait;
         // ChromeDriver chrome;
 
-        [Test()]
-        public void BuingDeliveryOnly()
+        [SetUp]
+        public void StartBrowser()
         {
             firefox = new FirefoxDriver();
             firefox.Manage().Window.Maximize();
             wait = new WebDriverWait(firefox, TimeSpan.FromSeconds(5));
+        }
 
-            try
+
+        [TearDown]
+        public void StopBrowser()
+        {
+            if (firefox != null)
             {
+                firefox.Quit();
+                firefox = null;
+            }
+        }
+
+
+
+        [Test()]
+        public void BuingDeliveryOnly()
+        {
+           // firefox = new FirefoxDriver();
+           // firefox.Manage().Window.Maximize();
+          //  wait = new WebDriverWait(firefox, TimeSpan.FromSeconds(5));
+
+          //  try
+           // {
 
                 firefox.Navigate()
                     .GoToUrl("http://www.whiteaway.com/product/levering-indbaering-montering/");
@@ -104,8 +125,8 @@ namespace WAG_tests
                 Thread.Sleep(3000);
                 firefox.FindElement(By.XPath("/html/body/div[3]/div[2]/div[7]/a")).Click();
                 Thread.Sleep(3000);
-            }
-            finally { firefox.Quit(); }
+           // }
+           // finally { firefox.Quit(); }
 
         }
 

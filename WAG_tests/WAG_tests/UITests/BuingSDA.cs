@@ -16,15 +16,34 @@ namespace WAG_tests
         WebDriverWait wait;
         // ChromeDriver chrome;
 
-        [Test()]
-        public void BuingSDAWithoutServises()
+        [SetUp]
+        public void StartBrowser()
         {
             firefox = new FirefoxDriver();
             firefox.Manage().Window.Maximize();
             wait = new WebDriverWait(firefox, TimeSpan.FromSeconds(5));
+        }
 
-            try
+
+        [TearDown]
+        public void StopBrowser()
+        {
+            if (firefox != null)
             {
+                firefox.Quit();
+                firefox = null;
+            }
+        }
+
+        [Test()]
+        public void BuingSDAWithoutServises()
+        {
+           // firefox = new FirefoxDriver();
+            //firefox.Manage().Window.Maximize();
+           // wait = new WebDriverWait(firefox, TimeSpan.FromSeconds(5));
+
+           // try
+           // {
 
                 firefox.Navigate()
                     .GoToUrl("http://whiteaway.com/stoevsuger/gulvrenser/product/nilfisk-nilfisk-smart-green-28/");
@@ -78,8 +97,8 @@ namespace WAG_tests
                 Thread.Sleep(3000);
                 firefox.FindElement(By.XPath("/html/body/div[3]/div[2]/div[7]/a")).Click();
                 Thread.Sleep(3000);
-            }
-            finally { firefox.Quit(); }
+           // }
+           // finally { firefox.Quit(); }
 
         }
 
@@ -87,12 +106,12 @@ namespace WAG_tests
         [Test()]
         public void BuingSDAoutOfStockWithOption()
         {
-            firefox = new FirefoxDriver();
-            firefox.Manage().Window.Maximize();
-            wait = new WebDriverWait(firefox, TimeSpan.FromSeconds(5));
+           // firefox = new FirefoxDriver();
+          //  firefox.Manage().Window.Maximize();
+          //  wait = new WebDriverWait(firefox, TimeSpan.FromSeconds(5));
 
-            try
-            {
+           // try
+           // {
                 firefox.Navigate()
                     .GoToUrl("http://www.whiteaway.com/koekkenudstyr/blender/blender/product/kitchenaid-a-m-0-75l-krom/");
 
@@ -164,8 +183,8 @@ namespace WAG_tests
                 Thread.Sleep(3000);
                 firefox.FindElement(By.XPath("/html/body/div[3]/div[2]/div[7]/a")).Click();
                 Thread.Sleep(3000);
-            }
-            finally { firefox.Quit(); }
+          //  }
+           // finally { firefox.Quit(); }
         }
 
     }
