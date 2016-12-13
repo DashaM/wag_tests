@@ -13,7 +13,7 @@ namespace WAG_tests
     [SetUpFixture]
     public class Finalizer
     {
-         [TearDown]    
+         [OneTimeTearDown]    
         public void RunInTheEndOfAll()
         {
             WebDriverFactory.DismissAll();

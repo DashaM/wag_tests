@@ -174,7 +174,7 @@ namespace WAG_tests
 
 
                 firefox.FindElement(By.Id("postcode")).SendKeys("8000");
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
+                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(40));
                 Thread.Sleep(4000);
                 //firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[2]/div[2]/div[2]/div/div[2]/div[1]/div[1]/label")).Click();
                // firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
