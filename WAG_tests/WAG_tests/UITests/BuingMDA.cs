@@ -12,7 +12,7 @@ using System.Collections.Generic;
 namespace WAG_tests
 {
     [TestFixture()]
-    public class BuyingMDA : TestBase
+    public class BuyingMDA  //: TestBase
     {
         FirefoxDriver firefox;
         WebDriverWait wait;
