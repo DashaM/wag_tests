@@ -72,6 +72,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Finalizer.cs" />
+    <Compile Include="WebDriverFactory.cs" />
     <Compile Include="TestBase.cs" />
     <Compile Include="UITests\BuingMDA.cs" />
     <Compile Include="UITests\BuingDelivery.cs" />

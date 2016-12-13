@@ -7,31 +7,23 @@ using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Firefox;
 using NUnit.Framework;
 
+
 namespace WAG_tests
 {
 
     [TestFixture()]
     public class TestBase
     {
-      protected  FirefoxDriver firefox;
+      protected  IWebDriver firefox;
+      WebDriverWait wait;
 
         [SetUp]
         public void StartBrowser()
         {
-            firefox = new FirefoxDriver();
+            firefox = WebDriverFactory.GetDriver(DesiredCapabilities.Firefox());
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             firefox.Manage().Window.Maximize();
             firefox.Navigate().GoToUrl("http://whiteaway.com/");
-        }
-
-
-        [TearDown]
-        public void StopBrowser()
-        {
-            if (firefox != null)
-            {
-                firefox.Quit();
-                firefox = null;
-            }
         }
 
 
@@ -73,6 +65,49 @@ namespace WAG_tests
             return IsElementPresent(By.LinkText("Log af"));
         }
 
+
+        protected bool IsEmptySearch()
+        {
+            return IsElementPresent(By.CssSelector("span.search__suggest-zero"));
+        }
+
+
+
+        protected void InitializeSearch(string searchrequest)
+        {
+            firefox.FindElement(By.CssSelector("input.search__input.js-search-field")).Clear();
+            firefox.FindElement(By.CssSelector("input.search__input.js-search-field")).SendKeys(searchrequest);
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
+        }
+
+
+
+        protected void IsSearchResultsPresent(string searchrequest)
+        {
+            firefox.FindElement(By.CssSelector("a.search__suggest__see-all")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
+            Assert.AreEqual(searchrequest, firefox.FindElement(By.Id("page_headline")).Text);
+        }
+
+
+
+        protected void SearchPageNavigationNext(string url, string nextpagenumber)
+        {
+            firefox.Navigate()
+                    .GoToUrl(url);
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+            firefox.FindElement(By.LinkText(nextpagenumber)).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+        }
+
+
+
+        protected void SearchPageNavigationPrevious(string nextpagenumber)
+        {
+            String ptr = firefox.Url;
+            if (ptr.Contains("side" + nextpagenumber)) firefox.FindElement(By.CssSelector("a.pageResults.pageResultsPrev")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+        }
 
 
     }

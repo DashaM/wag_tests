@@ -10,27 +10,6 @@ namespace WAG_tests
     [TestFixture()]
     public class UserLogin : TestBase
     {
-       // FirefoxDriver firefox;
-
-   /* [SetUp]
-        public void StartBrowser()
-        {
-            firefox = new FirefoxDriver();
-            firefox.Manage().Window.Maximize();
-            firefox.Navigate().GoToUrl("http://whiteaway.com/");
-        }
-
-
-    [TearDown]
-    public void StopBrowser()
-    {
-        if (firefox != null)
-        {
-            firefox.Quit();
-            firefox = null;
-        }
-    } */
-
 
         [Test()]
         public void WrongDataLogin()
@@ -49,14 +28,6 @@ namespace WAG_tests
                IsLoggedIn();
                Logout();
         }
-
-
-
-
-
-     
-
-
     }
 }
 
