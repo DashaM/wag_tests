@@ -171,7 +171,8 @@ namespace WAG_tests
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(3000);
             firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/form/div[6]/button")).Click();
-            firefox.FindElement(By.XPath("(//button[@type='submit'])[3]")).Click();
+          //  firefox.FindElement(By.XPath("(//button[@type='submit'])[3]")).Click();
+            firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/form/div[6]/button")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(3000);
         }
@@ -205,8 +206,8 @@ namespace WAG_tests
             firefox.FindElement(By.Id("label_for_email_address")).SendKeys("test.yhy@yopmail.com");
 
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-            //firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/form/div[6]/button")).Click();
-            firefox.FindElement(By.XPath("(//button[@type='submit'])[3]")).Click();
+            firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/form/div[6]/button")).Click();
+           // firefox.FindElement(By.XPath("(//button[@type='submit'])[3]")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(3000);
         }
