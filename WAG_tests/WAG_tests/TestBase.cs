@@ -28,6 +28,9 @@ namespace WAG_tests
 
 
 
+
+
+        // methods for all tests
         protected void Logout()
         {
             firefox.FindElement(By.LinkText("Log af")).Click();
@@ -108,6 +111,184 @@ namespace WAG_tests
             if (ptr.Contains("side" + nextpagenumber)) firefox.FindElement(By.CssSelector("a.pageResults.pageResultsPrev")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
         }
+
+
+        protected void AddProductWithoutBonustoBasket(string productpageurl)
+        {
+            firefox.Navigate().GoToUrl(productpageurl);
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Thread.Sleep(3000);
+            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/section[2]/div/div[2]/button")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            firefox.FindElement(By.LinkText("Kurv")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Thread.Sleep(4000);
+        }
+
+
+        protected void AddProductWithBonustoBasket(string productpageurl)
+        {
+            firefox.Navigate().GoToUrl(productpageurl);
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Thread.Sleep(3000);
+            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/section[2]/div/div[2]/button")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+            firefox.FindElement(By.LinkText("Gå til kurv")).Click();
+            // firefox.FindElement(By.LinkText("Kurv")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Thread.Sleep(4000);
+        }
+
+
+        protected void CheckOutFlowStep0Delivery()
+        {
+            firefox.FindElement(By.Id("label_for_services_call_number")).SendKeys("77777777");
+            firefox.FindElement(
+                 By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label")).Click();
+            firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+            firefox.FindElement(By.XPath("//div[@class='col-md-8']/div[3]/button")).Click();
+        }
+
+        protected void CheckOutFlowStep1Delivery()
+        {
+            firefox.FindElement(By.Id("delivery_telephone")).SendKeys("77777777");
+            firefox.FindElement(By.Id("label_for_delivery_firstname")).SendKeys("qwe");
+            firefox.FindElement(By.Id("label_for_delivery_lastname")).SendKeys("ewq");
+            firefox.FindElement(By.Id("label_for_delivery_street_address")).SendKeys("qwe77");
+            firefox.FindElement(By.Id("label_for_email_address")).SendKeys("test.yhy@yopmail.com");
+
+            firefox.FindElement(By.XPath("//div[@class='col-md-8']/form/div[1]/div/div/div[2]/div[4]/div[1]/div/div/div/button")).Click();
+            firefox.FindElement(By.XPath("//div[7]/div/div/div[3]/div/div[2]/button")).Click();
+            firefox.FindElement(By.Id("postcode")).SendKeys("3600");
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Thread.Sleep(3000);
+            firefox.FindElement(By.CssSelector("a.btn")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Thread.Sleep(3000);
+
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            firefox.FindElement(By.XPath("//div[@class='col-md-8']/div[3]/button")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Thread.Sleep(3000);
+            firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/form/div[6]/button")).Click();
+            firefox.FindElement(By.XPath("(//button[@type='submit'])[3]")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Thread.Sleep(3000);
+        }
+
+        protected void CheckOutFlowStep1SDA()
+        {
+            firefox.FindElement(
+                     By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label")).Click();
+
+
+            firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+            firefox.FindElement(By.XPath("//button[@type='submit']")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+
+        }
+
+
+        protected void CheckOutFlowStep2SDA()
+        {
+            firefox.FindElement(By.Id("delivery_telephone")).Clear();
+            firefox.FindElement(By.Id("delivery_telephone")).SendKeys("77777777");
+            firefox.FindElement(By.Id("label_for_delivery_firstname")).Clear();
+            firefox.FindElement(By.Id("label_for_delivery_firstname")).SendKeys("qwe");
+            firefox.FindElement(By.Id("label_for_delivery_lastname")).Clear();
+            firefox.FindElement(By.Id("label_for_delivery_lastname")).SendKeys("ewq");
+            firefox.FindElement(By.Id("label_for_delivery_street_address")).Clear();
+            firefox.FindElement(By.Id("label_for_delivery_street_address")).SendKeys("qwe77");
+            firefox.FindElement(By.Id("delivery_postcode")).Clear();
+            firefox.FindElement(By.Id("delivery_postcode")).SendKeys("3600");
+            firefox.FindElement(By.Id("label_for_email_address")).Clear();
+            firefox.FindElement(By.Id("label_for_email_address")).SendKeys("test.yhy@yopmail.com");
+
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+            //firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/form/div[6]/button")).Click();
+            firefox.FindElement(By.XPath("(//button[@type='submit'])[3]")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Thread.Sleep(3000);
+        }
+
+        protected void CheckOutFlowStep3PaymentMethod(string paymentxpath)
+        {
+            firefox.FindElement(By.XPath(paymentxpath)).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Thread.Sleep(3000);
+
+            firefox.FindElement(By.XPath("//button[@type='button']")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Thread.Sleep(3000);
+        }
+
+
+        protected void CheckOutFlowLastStep()
+        {
+            firefox.FindElement(By.CssSelector("span.control-indicator")).Click();
+            firefox.FindElement(By.XPath("//button[@type='button']")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Thread.Sleep(3000);
+            firefox.FindElement(By.XPath("/html/body/div[3]/div[2]/div[7]/a")).Click();
+            Thread.Sleep(3000);
+        }
+
+
+        protected void StartCheckOutFlowFromBasketDeliveryonly()
+        {
+            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]/a")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
+
+            Thread.Sleep(4000);
+
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Thread.Sleep(3000);
+        }
+
+
+        protected void StartCheckOutFlowFromBasketSDAOnly()
+        {
+            firefox.FindElement(By.LinkText("Gå til bestilling")).Click();
+
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+
+           // firefox.FindElement(By.XPath("//div[@class='list-group']/div/label[2]/div/div/div[1]/div/input")).Click();
+
+          //  firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+           // Thread.Sleep(3000);
+        }
+
+        protected void StartCheckOutFlowFromBasket()
+        {
+            firefox.FindElement(By.LinkText("Gå til bestilling")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
+            Thread.Sleep(3000);
+        }
+
+
+        protected void SelectService(string servicexpath)
+        {
+            firefox.FindElement(By.XPath(servicexpath))
+                   .Click();
+
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
+            Thread.Sleep(3000);
+
+            firefox.FindElement(
+                By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[3]/a")).Click();
+
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
+            Thread.Sleep(3000);
+        }
+
+        protected void SelectDeliveryOptionSDA(string deliveryxpath)
+        {
+            firefox.FindElement(By.XPath(deliveryxpath)).Click();
+
+             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+             Thread.Sleep(3000);
+        }
+
 
 
     }
