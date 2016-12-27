@@ -112,6 +112,14 @@ namespace WAG_tests
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
         }
 
+        protected void ClearBasket()
+        {
+            firefox.Navigate().GoToUrl("https://www.whiteaway.com/?action=empty_basket");
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Thread.Sleep(3000);
+            
+        }
+
 
         protected void AddProductWithoutBonustoBasket(string productpageurl)
         {
@@ -164,38 +172,78 @@ namespace WAG_tests
 
         protected void CheckOutFlowStep0Delivery()
         {
+            firefox.FindElement(By.Id("label_for_services_call_number")).Clear();
             firefox.FindElement(By.Id("label_for_services_call_number")).SendKeys("77777777");
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             firefox.FindElement(
-                 By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label")).Click();
+              By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            firefox.FindElement(By.Id("comment")).Clear();
             firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             firefox.FindElement(By.XPath("//div[@class='col-md-8']/div[3]/button")).Click();
         }
 
+        protected void CheckOutFlowStep0Delivery2MDA()
+        {
+            firefox.FindElement(By.Id("label_for_services_call_number")).Clear();
+            firefox.FindElement(By.Id("label_for_services_call_number")).SendKeys("77777777");
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
+            Thread.Sleep(4000);
+            if (
+                firefox.FindElement(
+                    By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[3]/div[2]/label")).Selected)
+            {
+                firefox.FindElement(By.Id("comment")).Clear();
+                firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+            }
+            else
+            {
+                firefox.FindElement(
+                    By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[3]/div[2]/label")).Click();
+          
+            firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+                  }
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+        firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[4]/button")).Click(); 
+        }
+
+
         protected void CheckOutFlowStep0DeliveryMDAPlusSDA()
         {
+            firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div/div/div[2]/div[2]/div/div/label[2]/div/div/div[1]/div/div")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
+            firefox.FindElement(By.Id("label_for_services_call_number")).Clear();
             firefox.FindElement(By.Id("label_for_services_call_number")).SendKeys("77777777");
 
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(4000);
-            firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div/div/div[2]/div[2]/div/div/label[2]/div/div/div[1]/div/div")).Click();
-            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             firefox.FindElement(
                  By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[3]/div[2]/label")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            firefox.FindElement(By.Id("comment")).Clear();
             firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[4]/button")).Click();
         }
 
 
         protected void CheckOutFlowStep1Delivery()
         {
+            firefox.FindElement(By.Id("delivery_telephone")).Clear();
             firefox.FindElement(By.Id("delivery_telephone")).SendKeys("77777777");
+            firefox.FindElement(By.Id("label_for_delivery_firstname")).Clear();
             firefox.FindElement(By.Id("label_for_delivery_firstname")).SendKeys("qwe");
+            firefox.FindElement(By.Id("label_for_delivery_lastname")).Clear();
             firefox.FindElement(By.Id("label_for_delivery_lastname")).SendKeys("ewq");
+            firefox.FindElement(By.Id("label_for_delivery_street_address")).Clear();
             firefox.FindElement(By.Id("label_for_delivery_street_address")).SendKeys("qwe77");
+            firefox.FindElement(By.Id("label_for_email_address")).Clear();
             firefox.FindElement(By.Id("label_for_email_address")).SendKeys("test.yhy@yopmail.com");
 
             firefox.FindElement(By.XPath("//div[@class='col-md-8']/form/div[1]/div/div/div[2]/div[4]/div[1]/div/div/div/button")).Click();
             firefox.FindElement(By.XPath("//div[7]/div/div/div[3]/div/div[2]/button")).Click();
+            firefox.FindElement(By.Id("postcode")).Clear();
             firefox.FindElement(By.Id("postcode")).SendKeys("3600");
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(3000);
@@ -218,9 +266,10 @@ namespace WAG_tests
         {
             firefox.FindElement(
                      By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label")).Click();
-
-
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            firefox.FindElement(By.Id("comment")).Clear();
             firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             firefox.FindElement(By.XPath("//button[@type='submit']")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
 
@@ -252,11 +301,15 @@ namespace WAG_tests
 
         protected void CheckOutFlowStep2MDA()
         {
+            firefox.FindElement(By.Id("delivery_telephone")).Clear();
             firefox.FindElement(By.Id("delivery_telephone")).SendKeys("77777777");
+            firefox.FindElement(By.Id("label_for_delivery_firstname")).Clear();
             firefox.FindElement(By.Id("label_for_delivery_firstname")).SendKeys("qwe");
+            firefox.FindElement(By.Id("label_for_delivery_lastname")).Clear();
             firefox.FindElement(By.Id("label_for_delivery_lastname")).SendKeys("ewq");
+            firefox.FindElement(By.Id("label_for_delivery_street_address")).Clear();
             firefox.FindElement(By.Id("label_for_delivery_street_address")).SendKeys("qwe77");
-
+            firefox.FindElement(By.Id("label_for_email_address")).Clear();
             firefox.FindElement(By.Id("label_for_email_address")).SendKeys("test.yhy@yopmail.com");
             firefox.FindElement(By.XPath("(//button[@type='submit'])[3]")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
@@ -338,6 +391,7 @@ namespace WAG_tests
 
         protected void SelectServiceMDA(string postcode ,string servicexpath)
         {
+            firefox.FindElement(By.Id("postcode")).Clear();
             firefox.FindElement(By.Id("postcode")).SendKeys(postcode);
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             Thread.Sleep(4000);
@@ -352,6 +406,7 @@ namespace WAG_tests
 
         protected void SelectServiceMDA(string postcode)
         {
+            firefox.FindElement(By.Id("postcode")).Clear();
             firefox.FindElement(By.Id("postcode")).SendKeys(postcode);
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(40));
             Thread.Sleep(4000);

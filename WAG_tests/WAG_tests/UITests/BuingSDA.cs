@@ -15,6 +15,7 @@ namespace WAG_tests
         [Test()]
         public void BuingSDAWithoutServises()
         {
+            ClearBasket();
                AddProductWithoutBonustoBasket("http://whiteaway.com/stoevsuger/gulvrenser/product/nilfisk-nilfisk-smart-green-28/");
                StartCheckOutFlowFromBasket();
                SelectDeliveryOptionSDA("//div[@class='list-group']/div/label[2]/div/div/div[1]/div/input");
@@ -29,6 +30,7 @@ namespace WAG_tests
         [Test()]
         public void BuingSDAoutOfStockWithOption()
         {
+            ClearBasket();
                 AddProductWithoutBonustoBasket("http://www.whiteaway.com/koekkenudstyr/blender/blender/product/kitchenaid-a-m-0-75l-krom/");
                 StartCheckOutFlowFromBasket();
                 SelectServiceSDA("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[2]/div[2]/div[2]/div/div/div[1]/div[1]/label");

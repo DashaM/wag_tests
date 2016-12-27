@@ -41,7 +41,7 @@ namespace WAG_tests
         [Test()]
         public void BuingMDA()
         {
-
+            ClearBasket();
               /*  firefox.Navigate()
                     .GoToUrl("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/bosch-waw32568sn-topmodel/");
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
@@ -143,7 +143,7 @@ namespace WAG_tests
         [Test()]
         public void BuingSeveralMDAsWithSlots()
         {
-
+            ClearBasket();
                /* firefox.Navigate()
                     .GoToUrl("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/bosch-waw32568sn-topmodel/");
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
@@ -197,7 +197,7 @@ namespace WAG_tests
                      By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[3]/div[2]/label")).Click();
                 firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
                 firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[4]/button")).Click(); */
-                CheckOutFlowStep0Delivery();
+            CheckOutFlowStep0Delivery2MDA();
 
 
 
@@ -247,7 +247,7 @@ namespace WAG_tests
         [Test()]
         public void BuingMDAWithSlots()
         {
-
+            ClearBasket();
              /*   firefox.Navigate()
                     .GoToUrl("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/bosch-waw32568sn-topmodel/");
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
@@ -337,7 +337,7 @@ namespace WAG_tests
         [Test()]
         public void BuingMDAandSDA()
         {
-
+            ClearBasket();
               /*  firefox.Navigate()
                     .GoToUrl("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/bosch-waw32568sn-topmodel/");
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
