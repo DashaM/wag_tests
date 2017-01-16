@@ -24,7 +24,7 @@ namespace WAG_tests
        [Test()]
         public void CorrectDataLogin()
         {
-               Login("test.yhy@yopmail.com", "l5qjW");
+            Login("test.yhy@yopmail.com", "hkXm9");
                IsLoggedIn();
                Logout();
         }

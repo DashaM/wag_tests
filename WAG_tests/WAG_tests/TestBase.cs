@@ -311,6 +311,7 @@ namespace WAG_tests
             firefox.FindElement(By.Id("label_for_delivery_street_address")).SendKeys("qwe77");
             firefox.FindElement(By.Id("label_for_email_address")).Clear();
             firefox.FindElement(By.Id("label_for_email_address")).SendKeys("test.yhy@yopmail.com");
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             firefox.FindElement(By.XPath("(//button[@type='submit'])[3]")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(3000);

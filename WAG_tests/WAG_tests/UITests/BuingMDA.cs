@@ -89,7 +89,7 @@ namespace WAG_tests
                 firefox.FindElement(
                      By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label")).Click();
                 firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
-                firefox.FindElement(By.XPath("//div[@class='col-md-8']/div[3]/button")).Click(); */
+                firefox.FindElement(By.XPath("//div[@class='col-md-8']/div[3]/button")).Click()firefox.FindElement(By.XPath("//div[@class='col-md-8']/div[3]/button")).Click(); */
 
             CheckOutFlowStep0Delivery();
 
