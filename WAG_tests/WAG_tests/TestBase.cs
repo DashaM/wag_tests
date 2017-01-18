@@ -174,6 +174,7 @@ namespace WAG_tests
         protected void CheckOutFlowStep0Delivery()
         {
             firefox.FindElement(By.Id("label_for_services_call_number")).Clear();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             firefox.FindElement(By.Id("label_for_services_call_number")).SendKeys("77777777");
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
            /* firefox.FindElement(
@@ -192,9 +193,12 @@ namespace WAG_tests
                 }
                 else
                 {
-                    firefox.FindElement(
-                        By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[3]/div[2]/label"))
-                        .Click();
+                   // firefox.FindElement(
+                      //  By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[3]/div[2]/label"))
+                      //  .Click();
+
+                    firefox.FindElement(By.CssSelector("label.control")).Click();
+
                     firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                     firefox.FindElement(By.Id("comment")).Clear();
                     firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
