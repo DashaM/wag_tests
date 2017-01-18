@@ -14,6 +14,7 @@ namespace WAG_tests
     public class Finalizer
     {
          [OneTimeTearDown]    
+       
         public void RunInTheEndOfAll()
         {
             WebDriverFactory.DismissAll();

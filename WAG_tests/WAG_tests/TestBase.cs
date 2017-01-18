@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -264,11 +265,26 @@ namespace WAG_tests
 
         protected void CheckOutFlowStep1SDA()
         {
-            firefox.FindElement(
-                     By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label")).Click();
-            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-            firefox.FindElement(By.Id("comment")).Clear();
-            firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+
+            var iElement = firefox.FindElements(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label"));
+           // firefox.FindElement(
+                   //  By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label")).Click();
+            if (iElement.ElementAt(0).Selected)
+            {
+                firefox.FindElement(By.Id("comment")).Clear();
+                firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+            }
+            else
+            {
+               firefox.FindElement( By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label")).Click();
+               firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+               firefox.FindElement(By.Id("comment")).Clear();
+               firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+            }
+
+           // firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+           // firefox.FindElement(By.Id("comment")).Clear();
+          //  firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             firefox.FindElement(By.XPath("//button[@type='submit']")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
@@ -312,7 +328,18 @@ namespace WAG_tests
             firefox.FindElement(By.Id("label_for_email_address")).Clear();
             firefox.FindElement(By.Id("label_for_email_address")).SendKeys("test.yhy@yopmail.com");
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-            firefox.FindElement(By.XPath("(//button[@type='submit'])[3]")).Click();
+
+            
+
+            var iElement = firefox.FindElements(By.TagName("span"));
+            for (int i = 0; i < iElement.Count; i = i + 1)
+            {
+                if (iElement[i].Text == "Fortsæt" && iElement[i].Displayed)
+                {
+                    iElement[i].Click();
+                }
+            }
+           // firefox.FindElement(By.XPath("(//button[@type='submit'])[3]")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(3000);
         }
