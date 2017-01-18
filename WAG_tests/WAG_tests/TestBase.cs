@@ -176,11 +176,32 @@ namespace WAG_tests
             firefox.FindElement(By.Id("label_for_services_call_number")).Clear();
             firefox.FindElement(By.Id("label_for_services_call_number")).SendKeys("77777777");
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-            firefox.FindElement(
+           /* firefox.FindElement(
               By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             firefox.FindElement(By.Id("comment")).Clear();
-            firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+            firefox.FindElement(By.Id("comment")).SendKeys("+drop+");*/
+
+            var iElement = firefox.FindElements(By.Id("comment"));
+            for (int i = 0; i < iElement.Count; i = i + 1)
+            {
+                if (iElement[i].Displayed)
+                {
+                    firefox.FindElement(By.Id("comment")).Clear();
+                    firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+                }
+                else
+                {
+                    firefox.FindElement(
+                        By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[3]/div[2]/label"))
+                        .Click();
+                    firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    firefox.FindElement(By.Id("comment")).Clear();
+                    firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+                }
+            }
+
+
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             firefox.FindElement(By.XPath("//div[@class='col-md-8']/div[3]/button")).Click();
         }
@@ -191,7 +212,8 @@ namespace WAG_tests
             firefox.FindElement(By.Id("label_for_services_call_number")).SendKeys("77777777");
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             Thread.Sleep(4000);
-            if (
+
+           /* if (
                 firefox.FindElement(
                     By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[3]/div[2]/label")).Selected)
             {
@@ -205,6 +227,32 @@ namespace WAG_tests
           
             firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
                   }
+            */
+
+         //   var iElement = firefox.FindElements(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label"));
+
+
+            var iElement = firefox.FindElements(By.Id("comment"));
+            for (int i = 0; i < iElement.Count; i = i + 1)
+            {
+                if (iElement[i].Displayed)
+                {
+                    firefox.FindElement(By.Id("comment")).Clear();
+                    firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+                }
+                else
+                {
+                    firefox.FindElement(
+                     By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[3]/div[2]/label")).Click();
+                    firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    firefox.FindElement(By.Id("comment")).Clear();
+                    firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+                }
+            }
+
+
+
+
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
         firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[4]/button")).Click(); 
         }
@@ -219,11 +267,32 @@ namespace WAG_tests
 
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(4000);
-            firefox.FindElement(
+           /* firefox.FindElement(
                  By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[3]/div[2]/label")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             firefox.FindElement(By.Id("comment")).Clear();
-            firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+            firefox.FindElement(By.Id("comment")).SendKeys("+drop+"); */
+
+           var iElement = firefox.FindElements(By.Id("comment"));
+            for (int i = 0; i < iElement.Count; i = i + 1)
+            {
+                if (iElement[i].Displayed)
+                {
+                    firefox.FindElement(By.Id("comment")).Clear();
+                    firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+                }
+                else
+                {
+                    firefox.FindElement(
+                        By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[3]/div[2]/label"))
+                        .Click();
+                    firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    firefox.FindElement(By.Id("comment")).Clear();
+                    firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+                }
+            }
+
+
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[4]/button")).Click();
         }
@@ -266,20 +335,26 @@ namespace WAG_tests
         protected void CheckOutFlowStep1SDA()
         {
 
-            var iElement = firefox.FindElements(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label"));
+           // var iElement = firefox.FindElements(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label"));
            // firefox.FindElement(
                    //  By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label")).Click();
-            if (iElement.ElementAt(0).Selected)
+            var iElement = firefox.FindElements(By.Id("comment"));
+            for (int i = 0; i < iElement.Count; i = i + 1)
             {
-                firefox.FindElement(By.Id("comment")).Clear();
-                firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
-            }
-            else
-            {
-               firefox.FindElement( By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label")).Click();
-               firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-               firefox.FindElement(By.Id("comment")).Clear();
-               firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+                if (iElement[i].Displayed)
+                {
+                    firefox.FindElement(By.Id("comment")).Clear();
+                    firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+                }
+                else
+                {
+                    firefox.FindElement(
+                        By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[3]/div[2]/label"))
+                        .Click();
+                    firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    firefox.FindElement(By.Id("comment")).Clear();
+                    firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+                }
             }
 
            // firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
@@ -329,17 +404,7 @@ namespace WAG_tests
             firefox.FindElement(By.Id("label_for_email_address")).SendKeys("test.yhy@yopmail.com");
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
 
-            
-
-            var iElement = firefox.FindElements(By.TagName("span"));
-            for (int i = 0; i < iElement.Count; i = i + 1)
-            {
-                if (iElement[i].Text == "Fortsæt" && iElement[i].Displayed)
-                {
-                    iElement[i].Click();
-                }
-            }
-           // firefox.FindElement(By.XPath("(//button[@type='submit'])[3]")).Click();
+            firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/form/div[6]/button")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(3000);
         }
