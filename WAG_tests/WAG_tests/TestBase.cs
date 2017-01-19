@@ -196,7 +196,7 @@ namespace WAG_tests
                    // firefox.FindElement(
                       //  By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[3]/div[2]/label"))
                       //  .Click();
-
+                    firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
                     firefox.FindElement(By.CssSelector("label.control")).Click();
 
                     firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
