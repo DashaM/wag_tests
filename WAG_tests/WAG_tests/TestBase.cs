@@ -177,13 +177,10 @@ namespace WAG_tests
             firefox.FindElement(By.Id("label_for_services_call_number")).Clear();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             firefox.FindElement(By.Id("label_for_services_call_number")).SendKeys("77777777");
-            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-           /* firefox.FindElement(
-              By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label")).Click();
-            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-            firefox.FindElement(By.Id("comment")).Clear();
-            firefox.FindElement(By.Id("comment")).SendKeys("+drop+");*/
-
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
+          
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
+            Thread.Sleep(4000);
             var iElement = firefox.FindElements(By.Id("comment"));
             for (int i = 0; i < iElement.Count; i = i + 1)
             {
@@ -198,13 +195,28 @@ namespace WAG_tests
                       //  By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[3]/div[2]/label"))
                       //  .Click();
                     firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-                    firefox.FindElement(By.CssSelector("label.control")).Click();
+                    //firefox.FindElement(By.CssSelector("label.control")).Click();
+
+                    iElement = firefox.FindElements(By.CssSelector("span.control-indicator"));
+                    var y = iElement.Count;
+                   
+                        if (y == 1)
+                        {
+                            firefox.FindElement(By.CssSelector("label.control")).Click();
+                        }
+                        else
+                        {
+                            firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label/span")).Click();
+                        }
 
                     firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                     firefox.FindElement(By.Id("comment")).Clear();
                     firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
                 }
             }
+
+
+            
 
 
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
