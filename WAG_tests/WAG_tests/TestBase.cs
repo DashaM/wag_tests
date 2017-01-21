@@ -130,6 +130,7 @@ namespace WAG_tests
             firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/section[2]/div/div[2]/button")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             firefox.FindElement(By.LinkText("Kurv")).Click();
+           
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(4000);
         }
@@ -186,7 +187,7 @@ namespace WAG_tests
             var iElement = firefox.FindElements(By.Id("comment"));
             for (int i = 0; i < iElement.Count; i = i + 1)
             {
-                if (iElement[i].Displayed)
+                if (i==0) //iElement[i].Displayed
                 {
                     firefox.FindElement(By.Id("comment")).Clear();
                     firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
