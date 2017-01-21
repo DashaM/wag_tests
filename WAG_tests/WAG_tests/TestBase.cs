@@ -187,7 +187,7 @@ namespace WAG_tests
             var iElement = firefox.FindElements(By.Id("comment"));
             for (int i = 0; i < iElement.Count; i = i + 1)
             {
-                if (i==0) //iElement[i].Displayed
+                if (i!=0) //iElement[i].Displayed
                 {
                     firefox.FindElement(By.Id("comment")).Clear();
                     firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
