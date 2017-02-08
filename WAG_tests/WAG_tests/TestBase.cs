@@ -419,7 +419,12 @@ namespace WAG_tests
             firefox.FindElement(By.XPath("//button[@type='button']")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(3000);
-            firefox.FindElement(By.XPath("/html/body/div[3]/div[2]/div[7]/a")).Click();
+           
+        }
+
+        protected void FinalStep()
+        {
+             firefox.FindElement(By.XPath("/html/body/div[3]/div[2]/div[7]/a")).Click();
             Thread.Sleep(3000);
         }
 
@@ -495,6 +500,20 @@ namespace WAG_tests
             firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[3]/a")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             Thread.Sleep(4000); 
+        }
+
+
+        protected void ViabillMoveBackToShop()
+        {
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
+            firefox.FindElement(By.LinkText("Tilbage til butik")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
+
+        }
+
+        protected bool IsBackToStep()
+        {
+            return IsElementPresent(By.ClassName("alert-body"));
         }
 
 
