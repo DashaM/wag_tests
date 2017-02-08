@@ -11,7 +11,7 @@ namespace WAG_tests
     public class UserLogin : TestBase
     {
 
-        [Test()]
+      /*  [Test()]
         public void WrongDataLogin()
         {
                Login("test.yhy@yopmail.com", "qwe");
@@ -27,7 +27,7 @@ namespace WAG_tests
             Login("test.yhy@yopmail.com", "hkXm9");
                IsLoggedIn();
                Logout();
-        }
-    }
+        } */
+    } 
 }
 

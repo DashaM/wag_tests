@@ -42,98 +42,16 @@ namespace WAG_tests
         public void BuingMDA()
         {
             ClearBasket();
-              /*  firefox.Navigate()
-                    .GoToUrl("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/bosch-waw32568sn-topmodel/");
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/section[2]/div/div[2]/button")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-                firefox.FindElement(By.LinkText("Kurv")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(4000); */
-
+            
                 AddProductWithBonustoBasket("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/bosch-waw32568sn-topmodel/");
-
-
-            //корзина
-             /*   firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]/a")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-
-                Thread.Sleep(4000);
-
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000); */
-
                 StartCheckOutFlowFromBasket();
-
-
-
-            // 1й степ. выбор посткода и опции доставки
-              /*  firefox.FindElement(By.Id("postcode")).SendKeys("3600");
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-                Thread.Sleep(4000);
-                firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[2]/div[2]/div[2]/div/div[2]/div[1]/div[1]/label")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-                Thread.Sleep(4000);
-                firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[3]/a")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-                Thread.Sleep(4000); */
-
-
                 SelectServiceMDA("3600", "/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[2]/div[2]/div[2]/div/div[2]/div[1]/div[1]/label");
-
-
-            // 1+ телефон + комментарий
-            /*    firefox.FindElement(By.Id("label_for_services_call_number")).SendKeys("77777777");
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-                firefox.FindElement(
-                     By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label")).Click();
-                firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
-                firefox.FindElement(By.XPath("//div[@class='col-md-8']/div[3]/button")).Click()firefox.FindElement(By.XPath("//div[@class='col-md-8']/div[3]/button")).Click(); */
-
-            CheckOutFlowStep0Delivery();
-
-
-            //  2й степ
-             /*   firefox.FindElement(By.Id("delivery_telephone")).SendKeys("77777777");
-                firefox.FindElement(By.Id("label_for_delivery_firstname")).SendKeys("qwe");
-                firefox.FindElement(By.Id("label_for_delivery_lastname")).SendKeys("ewq");
-                firefox.FindElement(By.Id("label_for_delivery_street_address")).SendKeys("qwe77");
-
-                firefox.FindElement(By.Id("label_for_email_address")).SendKeys("test.yhy@yopmail.com");
-                firefox.FindElement(By.XPath("(//button[@type='submit'])[3]")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000); */
-
-            CheckOutFlowStep2MDA();
-
-            // СПОСОБ ОПЛАТЫ    
-             /*   firefox.FindElement(
-                    By.XPath(
-                        "/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[4]/div[2]/div/label/div/div[1]/div/div/div[1]/span")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("//button[@type='button']")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000); */
-
+                CheckOutFlowStep0Delivery();
+                CheckOutFlowStep2MDA();
                 CheckOutFlowStep3PaymentMethod("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[4]/div[2]/div/label/div/div[1]/div/div/div[1]/span");
-
-            // последний шаг
-             /*   firefox.FindElement(By.CssSelector("span.control-indicator")).Click();
-                firefox.FindElement(By.XPath("//button[@type='button']")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("/html/body/div[3]/div[2]/div[7]/a")).Click();
-                Thread.Sleep(3000); */
-
-            CheckOutFlowLastStep();
+                CheckOutFlowLastStep();
 
         }
-
-
-
-
 
 
 
@@ -144,101 +62,18 @@ namespace WAG_tests
         public void BuingSeveralMDAsWithSlots()
         {
             ClearBasket();
-               /* firefox.Navigate()
-                    .GoToUrl("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/bosch-waw32568sn-topmodel/");
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/section[2]/div/div[2]/button")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-
-                firefox.Navigate()
-                   .GoToUrl("https://www.whiteaway.com/hvidevarer/komfur/induktions-komfur/product/gorenje-ei67322ax/");
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/section[2]/div/div[2]/button")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-                firefox.FindElement(By.LinkText("Gå til kurv")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(4000); */
-
-
+              
             Add2ProducsToBasket(
                 "https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/bosch-waw32568sn-topmodel/",
                 "https://www.whiteaway.com/hvidevarer/komfur/induktions-komfur/product/gorenje-ei67322ax/");
 
-
-
-            /*    firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]/a")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-
-                Thread.Sleep(4000);
-
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000); */
-
                 StartCheckOutFlowFromBasket();
-
-
-
-              /* firefox.FindElement(By.Id("postcode")).SendKeys("8000");
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(40));
-                Thread.Sleep(4000);
-                firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[3]/a")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-                Thread.Sleep(4000); */
-                SelectServiceMDA("8000");
-
-
-
-          /*      firefox.FindElement(By.Id("label_for_services_call_number")).SendKeys("77777777");
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-                Thread.Sleep(4000);
-                firefox.FindElement(
-                     By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[3]/div[2]/label")).Click();
-                firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
-                firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[4]/button")).Click(); */
             CheckOutFlowStep0Delivery2MDA();
 
-
-
-              /*  firefox.FindElement(By.Id("delivery_telephone")).SendKeys("77777777");
-                firefox.FindElement(By.Id("label_for_delivery_firstname")).SendKeys("qwe");
-                firefox.FindElement(By.Id("label_for_delivery_lastname")).SendKeys("ewq");
-                firefox.FindElement(By.Id("label_for_delivery_street_address")).SendKeys("qwe77");
-
-                firefox.FindElement(By.Id("label_for_email_address")).SendKeys("test.yhy@yopmail.com");
-                firefox.FindElement(By.XPath("(//button[@type='submit'])[3]")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000); */
-
                 CheckOutFlowStep2MDA();
-
-
-              /*  firefox.FindElement(
-                    By.XPath(
-                        "/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[4]/div[2]/div/label/div/div[1]/div/div/div[1]/span")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("//button[@type='button']")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000); */
-
                 CheckOutFlowStep3PaymentMethod("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[4]/div[2]/div/label/div/div[1]/div/div/div[1]/span");
-
-
-             /*   firefox.FindElement(By.CssSelector("span.control-indicator")).Click();
-                firefox.FindElement(By.XPath("//button[@type='button']")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("/html/body/div[3]/div[2]/div[7]/a")).Click();
-                Thread.Sleep(3000);*/
                 CheckOutFlowLastStep();
         }
-
-
-
-
-
 
 
 
@@ -248,84 +83,13 @@ namespace WAG_tests
         public void BuingMDAWithSlots()
         {
             ClearBasket();
-             /*   firefox.Navigate()
-                    .GoToUrl("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/bosch-waw32568sn-topmodel/");
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/section[2]/div/div[2]/button")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-                firefox.FindElement(By.LinkText("Kurv")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(4000); */
 
                 AddProductWithBonustoBasket("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/bosch-waw32568sn-topmodel/");
-
-
-              /*  firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]/a")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-
-                Thread.Sleep(4000);
-   
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000); */
-
                 StartCheckOutFlowFromBasket();
-
-
-
-               /* firefox.FindElement(By.Id("postcode")).SendKeys("3600");
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-                Thread.Sleep(4000);
-
-                firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[3]/a")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-                Thread.Sleep(4000); */
-
                 SelectServiceMDA("3600");
-
-
-              /*  firefox.FindElement(By.Id("label_for_services_call_number")).SendKeys("77777777");
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-                firefox.FindElement(
-                     By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label")).Click();
-                firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
-
-                firefox.FindElement(By.XPath("//div[@class='col-md-8']/div[3]/button")).Click(); */
-
                 CheckOutFlowStep0Delivery();
-
-
-             /*   firefox.FindElement(By.Id("delivery_telephone")).SendKeys("77777777");
-                firefox.FindElement(By.Id("label_for_delivery_firstname")).SendKeys("qwe");
-                firefox.FindElement(By.Id("label_for_delivery_lastname")).SendKeys("ewq");
-                firefox.FindElement(By.Id("label_for_delivery_street_address")).SendKeys("qwe77");
-
-                firefox.FindElement(By.Id("label_for_email_address")).SendKeys("test.yhy@yopmail.com");
-                firefox.FindElement(By.XPath("(//button[@type='submit'])[3]")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000); */
-
                 CheckOutFlowStep2MDA();
-
-
-               /* firefox.FindElement(
-                    By.XPath(
-                        "/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[4]/div[2]/div/label/div/div[1]/div/div/div[1]/span")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("//button[@type='button']")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000); */
-
                 CheckOutFlowStep3PaymentMethod("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[4]/div[2]/div/label/div/div[1]/div/div/div[1]/span");
-
-
-              /*  firefox.FindElement(By.CssSelector("span.control-indicator")).Click();
-                firefox.FindElement(By.XPath("//button[@type='button']")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("/html/body/div[3]/div[2]/div[7]/a")).Click();
-                Thread.Sleep(3000); */
                 CheckOutFlowLastStep();
 
         }
@@ -338,101 +102,19 @@ namespace WAG_tests
         public void BuingMDAandSDA()
         {
             ClearBasket();
-              /*  firefox.Navigate()
-                    .GoToUrl("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/bosch-waw32568sn-topmodel/");
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/section[2]/div/div[2]/button")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-
-                firefox.Navigate()
-                   .GoToUrl("https://www.whiteaway.com/koekkenudstyr/blender/blender/product/raw-pro-x1500-black-2-hk-2-0-l-2-generation/");
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/section[2]/div/div[2]/button")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-                firefox.FindElement(By.LinkText("Gå til kurv")).Click();
-                // firefox.FindElement(By.LinkText("Kurv")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(4000); */
-
+            
                 Add2ProducsToBasket(
                    "https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/bosch-waw32568sn-topmodel/",
                    "https://www.whiteaway.com/koekkenudstyr/blender/blender/product/raw-pro-x1500-black-2-hk-2-0-l-2-generation/");
 
-               /* firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]/a")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-                Thread.Sleep(4000);
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000); */
                 StartCheckOutFlowFromBasket();
-
-
-
-             /*   firefox.FindElement(By.Id("postcode")).SendKeys("8000");
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-                Thread.Sleep(4000);
-                firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[3]/a")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-                Thread.Sleep(4000);*/
                 SelectServiceMDA("3600");
-
-
-              /*  firefox.FindElement(By.Id("label_for_services_call_number")).SendKeys("77777777");
-
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(4000);
-                 firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div/div/div[2]/div[2]/div/div/label[2]/div/div/div[1]/div/div")).Click();
-                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                firefox.FindElement(
-                     By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[3]/div[2]/label")).Click();
-                firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
-                firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[4]/button")).Click(); */
-
-
-            CheckOutFlowStep0DeliveryMDAPlusSDA();
-
-
-
-                /*firefox.FindElement(By.Id("delivery_telephone")).SendKeys("77777777");
-                firefox.FindElement(By.Id("label_for_delivery_firstname")).SendKeys("qwe");
-                firefox.FindElement(By.Id("label_for_delivery_lastname")).SendKeys("ewq");
-                firefox.FindElement(By.Id("label_for_delivery_street_address")).SendKeys("qwe77");
-
-                firefox.FindElement(By.Id("label_for_email_address")).SendKeys("test.yhy@yopmail.com");
-                firefox.FindElement(By.XPath("(//button[@type='submit'])[3]")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000); */
-
+                CheckOutFlowStep0DeliveryMDAPlusSDA();
                 CheckOutFlowStep2MDA();
-
-
-
-             /*   firefox.FindElement(
-                    By.XPath(
-                        "/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[4]/div[2]/div/label/div/div[1]/div/div/div[1]/span")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("//button[@type='button']")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000); */
-
                 CheckOutFlowStep3PaymentMethod("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[4]/div[2]/div/label/div/div[1]/div/div/div[1]/span");
-
-
-               /* firefox.FindElement(By.CssSelector("span.control-indicator")).Click();
-                firefox.FindElement(By.XPath("//button[@type='button']")).Click();
-                firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-                Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("/html/body/div[3]/div[2]/div[7]/a")).Click();
-                Thread.Sleep(3000); */
                 CheckOutFlowLastStep();
 
         }
-
-
-
-
 
     }
 }

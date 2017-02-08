@@ -31,7 +31,8 @@ namespace WAG_tests
         public void BuingSDAoutOfStockWithOption()
         {
             ClearBasket();
-                AddProductWithoutBonustoBasket("http://www.whiteaway.com/koekkenudstyr/blender/blender/product/kitchenaid-a-m-0-75l-krom/");
+                //AddProductWithoutBonustoBasket("http://www.whiteaway.com/koekkenudstyr/blender/blender/product/kitchenaid-a-m-0-75l-krom/");
+            AddProductWithoutBonustoBasket("https://www.whiteaway.com/hus-have/stoevsuger/stoevsuger/product/dyson-v8-absolute/");
                 StartCheckOutFlowFromBasket();
                 SelectServiceSDA("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[2]/div[2]/div[2]/div/div/div[1]/div[1]/label");
                 SelectDeliveryOptionSDA("//div[@class='list-group']/div/label[2]/div/div/div[1]/div/input");
