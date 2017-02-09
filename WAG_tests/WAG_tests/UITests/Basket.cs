@@ -15,15 +15,7 @@ namespace WAG_tests
     public class Basket : TestBase
     {
 
-        [Test()]
-        public void AddProducts()
-        {
-                ClearBasket();
-                AddProductWithoutBonustoBasket("http://www.whiteaway.com/product/levering-indbaering-montering/");
-                AddProductWithBonustoBasket("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/bosch-waw32568sn-topmodel/");
 
-
-        }
 
 
   
