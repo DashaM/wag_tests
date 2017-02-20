@@ -135,7 +135,8 @@ namespace WAG_tests
             firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/section[2]/div/div[2]/button")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(3000);
-            firefox.FindElement(By.LinkText("Kurv")).Click();
+           // firefox.FindElement(By.LinkText("Kurv")).Click();
+            firefox.Navigate().GoToUrl("https://www.whiteaway.com/cart_display/#/");
            
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(4000);
@@ -506,6 +507,7 @@ namespace WAG_tests
 
         protected void ViabillMoveBackToShop()
         {
+            Thread.Sleep(4000);
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             firefox.FindElement(By.LinkText("Tilbage til butik")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
