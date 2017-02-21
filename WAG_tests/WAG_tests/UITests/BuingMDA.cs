@@ -107,7 +107,7 @@ namespace WAG_tests
             ClearBasket();
             
                 Add2ProducsToBasket(
-                   "https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/bosch-waw32568sn-topmodel/",
+                   "https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/lg-testvinder/",
                    "https://www.whiteaway.com/koekkenudstyr/blender/blender/product/raw-pro-x1500-black-2-hk-2-0-l-2-generation/");
 
                 StartCheckOutFlowFromBasket();

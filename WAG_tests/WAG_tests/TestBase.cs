@@ -507,8 +507,8 @@ namespace WAG_tests
 
         protected void ViabillMoveBackToShop()
         {
-            Thread.Sleep(4000);
-            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
+            Thread.Sleep(5000);
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(40));
             firefox.FindElement(By.LinkText("Tilbage til butik")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
 
