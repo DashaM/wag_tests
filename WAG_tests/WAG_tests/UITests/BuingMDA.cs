@@ -72,7 +72,7 @@ namespace WAG_tests
                 SelectServiceMDA("8000", "/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[2]/div[2]/div[2]/div/div[1]/div[1]/div[1]/label");
                 CheckOutFlowStep0Delivery2MDA();
                 CheckOutFlowStep2MDA();
-                CheckOutFlowStep3PaymentMethod("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[4]/div[2]/div/label/div/div[1]/div/div/div[1]/span");
+                CheckOutFlowStep3PaymentMethod("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[4]/div[2]/div/label/div/div[1]/div/div");
                 CheckOutFlowLastStep();
                 FinalStep();
         }
