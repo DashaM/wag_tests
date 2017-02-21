@@ -42,8 +42,8 @@ namespace WAG_tests
         public void BuingMDA()
         {
             ClearBasket();
-            
-                AddProductWithBonustoBasket("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/bosch-waw32568sn-topmodel/");
+
+            AddProductWithBonustoBasket("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/lg-testvinder/");
                 StartCheckOutFlowFromBasket();
                 SelectServiceMDA("3600", "/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[2]/div[2]/div[2]/div/div[2]/div[1]/div[1]/label");
                 CheckOutFlowStep0Delivery();
@@ -86,7 +86,7 @@ namespace WAG_tests
         {
             ClearBasket();
 
-                AddProductWithBonustoBasket("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/bosch-waw32568sn-topmodel/");
+            AddProductWithBonustoBasket("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/lg-testvinder/");
                 StartCheckOutFlowFromBasket();
                 SelectServiceMDA("3600");
                 CheckOutFlowStep0Delivery();
