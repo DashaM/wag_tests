@@ -39,6 +39,7 @@ namespace WAG_tests
 
 
         [Test()]
+        [Category("Long")]
         public void BuingMDA()
         {
             ClearBasket();
