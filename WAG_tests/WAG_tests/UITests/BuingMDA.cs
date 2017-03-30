@@ -14,29 +14,6 @@ namespace WAG_tests
     [TestFixture()]
     public class BuyingMDA  : TestBase
     {
-      /*  FirefoxDriver firefox;
-        WebDriverWait wait;
-        // ChromeDriver chrome;
-
-        [SetUp]
-        public void StartBrowser()
-        {
-            firefox = new FirefoxDriver();
-            firefox.Manage().Window.Maximize();
-            wait = new WebDriverWait(firefox, TimeSpan.FromSeconds(5));
-        }
-
-
-        [TearDown]
-        public void StopBrowser()
-        {
-            if (firefox != null)
-            {
-                firefox.Quit();
-                firefox = null;
-            }
-        } */
-
 
         [Test()]
         public void BuingMDA()

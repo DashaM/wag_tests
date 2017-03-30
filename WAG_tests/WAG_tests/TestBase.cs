@@ -514,6 +514,19 @@ namespace WAG_tests
 
         }
 
+
+        protected void MobilePayMoveBackToShop()
+        {
+            Thread.Sleep(5000);
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(40));
+            firefox.FindElement(By.XPath("/html/body/div/header/p[2]/a")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
+
+        }
+
+
+
+
         protected bool IsBackToStep()
         {
             return IsElementPresent(By.ClassName("alert-body"));
