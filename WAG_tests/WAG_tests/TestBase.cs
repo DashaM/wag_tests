@@ -132,7 +132,7 @@ namespace WAG_tests
             firefox.Navigate().GoToUrl(productpageurl);
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(3000);
-            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/section[2]/div/div[2]/button")).Click();
+            firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div[1]/section[3]/section[2]/div[1]/div[2]/button")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(3000);
            // firefox.FindElement(By.LinkText("Kurv")).Click();
@@ -426,7 +426,7 @@ namespace WAG_tests
 
         protected void FinalStep()
         {
-             firefox.FindElement(By.XPath("/html/body/div[3]/div[2]/div[7]/a")).Click();
+            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[7]/a")).Click();
             Thread.Sleep(3000);
         }
 
