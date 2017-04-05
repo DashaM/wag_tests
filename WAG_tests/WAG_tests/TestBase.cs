@@ -433,7 +433,7 @@ namespace WAG_tests
 
         protected void StartCheckOutFlowFromBasketDeliveryonly()
         {
-            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]/a")).Click();
+            firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
 
             Thread.Sleep(4000);
