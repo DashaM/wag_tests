@@ -166,14 +166,16 @@ namespace WAG_tests
                     .GoToUrl(productpageurl_1);
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                 Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div[1]/section[3]/section[2]/div/div[2]")).Click();
+             //   firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div[1]/section[3]/section[2]/div/div[2]")).Click();
+                firefox.FindElement(By.ClassName("vip__price-cta-and-favorites-wrap")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
 
                 firefox.Navigate()
                    .GoToUrl(productpageurl_2);
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                 Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div[1]/section[3]/section[2]/div/div[2]")).Click();
+              //  firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div[1]/section[3]/section[2]/div/div[2]")).Click();
+                firefox.FindElement(By.ClassName("vip__price-cta-and-favorites-wrap")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
                 firefox.FindElement(By.LinkText("Gå til kurv")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
@@ -439,7 +441,8 @@ namespace WAG_tests
 
         protected void StartCheckOutFlowFromBasketDeliveryonly()
         {
-            firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]")).Click();
+           // firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]")).Click();
+            firefox.FindElement(By.LinkText("Gå til bestilling")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
 
             Thread.Sleep(4000);
