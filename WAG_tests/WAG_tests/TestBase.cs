@@ -542,5 +542,12 @@ namespace WAG_tests
         }
 
 
+        protected bool IsDropCommentPresent()
+        {
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            return IsElementPresent(By.LinkText("+drop+"));
+        }
+
+
     }
 }

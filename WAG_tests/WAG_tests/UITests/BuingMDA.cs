@@ -26,7 +26,8 @@ namespace WAG_tests
                 CheckOutFlowStep0Delivery();
                 CheckOutFlowStep2MDA();
                 CheckOutFlowStep3PaymentMethod("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[4]/div[2]/div/label/div/div[1]/div/div/div[1]/span");
-                CheckOutFlowLastStep();
+                IsDropCommentPresent();   
+            CheckOutFlowLastStep();
                 FinalStep();
 
         }
@@ -50,7 +51,8 @@ namespace WAG_tests
                 CheckOutFlowStep0Delivery2MDA();
                 CheckOutFlowStep2MDA();
                 CheckOutFlowStep3PaymentMethod("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[4]/div[2]/div/label/div/div[1]/div/div");
-                CheckOutFlowLastStep();
+                IsDropCommentPresent();    
+            CheckOutFlowLastStep();
                 FinalStep();
         }
 
@@ -69,7 +71,8 @@ namespace WAG_tests
                 CheckOutFlowStep0Delivery();
                 CheckOutFlowStep2MDA();
                 CheckOutFlowStep3PaymentMethod("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[4]/div[2]/div/label/div/div[1]/div/div/div[1]/span");
-                CheckOutFlowLastStep();
+                IsDropCommentPresent(); 
+            CheckOutFlowLastStep();
                 FinalStep();
 
         }
@@ -92,7 +95,8 @@ namespace WAG_tests
                 CheckOutFlowStep0DeliveryMDAPlusSDA();
                 CheckOutFlowStep2MDA();
                 CheckOutFlowStep3PaymentMethod("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[4]/div[2]/div/label/div/div[1]/div/div/div[1]/span");
-                CheckOutFlowLastStep();
+                IsDropCommentPresent();
+            CheckOutFlowLastStep();
                 FinalStep();
 
         }

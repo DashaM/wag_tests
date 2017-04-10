@@ -22,7 +22,8 @@ namespace WAG_tests
                CheckOutFlowStep1SDA();
                CheckOutFlowStep2SDA();
                CheckOutFlowStep3PaymentMethod("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[1]/div[2]/div/label/div/div[1]/div/div/div[2]");
-               CheckOutFlowLastStep();
+               IsDropCommentPresent();
+            CheckOutFlowLastStep();
             ViabillMoveBackToShop();
                IsBackToStep();
                
@@ -40,6 +41,7 @@ namespace WAG_tests
             CheckOutFlowStep1SDA();
             CheckOutFlowStep2SDA();
             CheckOutFlowStep3PaymentMethod("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[3]/div[2]/div/label/div/div[1]/div/div");
+            IsDropCommentPresent();
             CheckOutFlowLastStep();
             MobilePayMoveBackToShop();
             IsBackToStep();
