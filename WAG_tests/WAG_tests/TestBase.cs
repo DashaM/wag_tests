@@ -132,7 +132,8 @@ namespace WAG_tests
             firefox.Navigate().GoToUrl(productpageurl);
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(3000);
-            firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div[1]/section[3]/section[2]/div[1]/div[2]/button")).Click();
+           // firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div[1]/section[3]/section[2]/div[1]/div[2]/button")).Click();
+            firefox.FindElement(By.ClassName("vip__price-cta-and-favorites-wrap")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(3000);
            // firefox.FindElement(By.LinkText("Kurv")).Click();
@@ -371,6 +372,7 @@ namespace WAG_tests
             firefox.FindElement(By.Id("label_for_delivery_street_address")).SendKeys("qwe77");
             firefox.FindElement(By.Id("delivery_postcode")).Clear();
             firefox.FindElement(By.Id("delivery_postcode")).SendKeys("3600");
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             firefox.FindElement(By.Id("label_for_email_address")).Clear();
             firefox.FindElement(By.Id("label_for_email_address")).SendKeys("test.yhy@yopmail.com");
 
@@ -417,6 +419,7 @@ namespace WAG_tests
 
         protected void CheckOutFlowLastStep()
         {
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             firefox.FindElement(By.CssSelector("span.control-indicator")).Click();
             firefox.FindElement(By.XPath("//button[@type='button']")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
