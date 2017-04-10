@@ -16,7 +16,7 @@ namespace WAG_tests
         public void BuingSDAWithoutServises()
         {
             ClearBasket();
-               AddProductWithoutBonustoBasket("http://whiteaway.com/stoevsuger/gulvrenser/product/nilfisk-nilfisk-smart-green-28/");
+            AddProductWithoutBonustoBasket("https://www.whiteaway.com/personlig-pleje/helbred/blodtryksmaaler/product/braun-vitalscan/");
                StartCheckOutFlowFromBasket();
                SelectDeliveryOptionSDA("//div[@class='list-group']/div/label[2]/div/div/div[1]/div/input");
                CheckOutFlowStep1SDA();
