@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using System.Windows.Forms;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
@@ -62,6 +63,7 @@ namespace WAG_tests
         protected bool LoggedInErrorDisplayed()
         {
             return IsElementPresent(By.LinkText("Fejl: E-mail -adressen eller kodeordet blev ikke genkendt."));
+            
         }
 
 
@@ -219,7 +221,7 @@ namespace WAG_tests
                     firefox.FindElement(By.Id("comment")).Clear();
                     firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
                 }
-            }
+            } 
 
 
             
@@ -354,7 +356,7 @@ namespace WAG_tests
                     firefox.FindElement(By.Id("comment")).Clear();
                     firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
                 }
-            }
+            } 
 
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             firefox.FindElement(By.XPath("//button[@type='submit']")).Click();
@@ -463,6 +465,7 @@ namespace WAG_tests
 
         protected void SelectServiceSDA(string servicexpath)
         {
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             firefox.FindElement(By.XPath(servicexpath))
                    .Click();
 
@@ -542,10 +545,14 @@ namespace WAG_tests
         }
 
 
-        protected bool IsDropCommentPresent()
+        protected void IsDropCommentPresent()
         {
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-            return IsElementPresent(By.LinkText("+drop+"));
+            Assert.AreEqual("Kommentar\r\n+drop+", firefox.FindElement(By.CssSelector("div.checkout-panel-body > div.ng-binding.ng-scope")).Text);
+
+           
+
+
         }
 
 
