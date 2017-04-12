@@ -26,8 +26,6 @@ namespace WAG_tests
             CheckOutFlowLastStep();
             ViabillMoveBackToShop();
                IsBackToStep();
-               
-      
         }
 
 
@@ -45,8 +43,6 @@ namespace WAG_tests
             CheckOutFlowLastStep();
             MobilePayMoveBackToShop();
             IsBackToStep();
-
-
         }
 
 
@@ -63,11 +59,7 @@ namespace WAG_tests
             CheckOutFlowStep3PaymentMethod("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[2]/div[2]/div/label[1]/div/div[1]/div");
             IsDropCommentPresent();
             CheckOutFlowLastStep();
-           // MobilePayMoveBackToShop();
-           // IsBackToStep();
             IsAltapayGatewayOpened();
-
-
         }
 
 
@@ -88,7 +80,7 @@ namespace WAG_tests
 
 
         [Test()]
-        public void OtherAltapeyCards()
+        public void OtherAltapayCards()
         {
             ClearBasket();
             AddProductWithoutBonustoBasket("https://www.whiteaway.com/personlig-pleje/barbering-trimning/barbermaskine/product/braun-5030s-maleshaver/");
@@ -100,8 +92,6 @@ namespace WAG_tests
             IsDropCommentPresent();
             CheckOutFlowLastStep();
             IsAltapayGatewayOpened();
-
-
         }
 
     }
