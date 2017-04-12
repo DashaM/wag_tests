@@ -549,11 +549,17 @@ namespace WAG_tests
         {
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Assert.AreEqual("Kommentar\r\n+drop+", firefox.FindElement(By.CssSelector("div.checkout-panel-body > div.ng-binding.ng-scope")).Text);
-
-           
-
-
         }
+
+
+
+        protected void IsAltapayGatewayOpened()
+        {
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Assert.AreEqual("Indtast dine kortoplysninger", firefox.FindElement(By.CssSelector("h2.wag-panel__header")).Text);
+            Assert.IsTrue(IsElementPresent(By.CssSelector("img.logo")));
+        }
+
 
 
     }
