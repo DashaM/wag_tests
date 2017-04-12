@@ -254,12 +254,12 @@ namespace WAG_tests
                     firefox.FindElement(By.Id("comment")).Clear();
                     firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
                 }
-            }
+            } 
 
 
 
 
-            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
         firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[4]/button")).Click(); 
         }
 
