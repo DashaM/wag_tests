@@ -16,7 +16,7 @@ namespace WAG_tests
     [TestFixture()]
     public class TestBase
     {
-      protected  IWebDriver firefox;
+        public static IWebDriver firefox;
       WebDriverWait wait;
 
         [SetUp]
