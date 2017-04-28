@@ -19,7 +19,7 @@ namespace WAG_fast
 
         public static void CreateFileDirectory()
         {
-            string pathString = @"c:\Program Files (x86)\Jenkins\workspace\WAG_tests-FAST";
+            string pathString = @"c:\Program Files (x86)\Jenkins\workspace\WAG_tests";
 
             bool dirExists = Directory.Exists(pathString);
             if (!dirExists)
