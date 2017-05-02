@@ -63,17 +63,24 @@ namespace WAG_tests
         [Test()]
         public void BuingMDAWithSlots()
         {
-            ClearBasket();
 
-            AddProductWithBonustoBasket("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/lg-testvinder/");
+            try
+            {
+                ClearBasket();
+
+                AddProductWithBonustoBasket(
+                    "https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/lg-testvinder/");
                 StartCheckOutFlowFromBasket();
                 SelectServiceMDA("3600");
                 CheckOutFlowStep0Delivery();
                 CheckOutFlowStep2MDA();
-                CheckOutFlowStep3PaymentMethod("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[4]/div[2]/div/label/div/div[1]/div/div/div[1]/span");
-              IsDropCommentPresent(); 
-            CheckOutFlowLastStep();
+                CheckOutFlowStep3PaymentMethod(
+                    "/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[4]/div[2]/div/label/div/div[1]/div/div/div[1]/span");
+                IsDropCommentPresent();
+                CheckOutFlowLastStep();
                 FinalStep();
+            }
+            catch (Exception) { Screenshot.Snap(); }
 
         }
 

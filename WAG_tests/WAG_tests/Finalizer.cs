@@ -19,5 +19,12 @@ namespace WAG_tests
         {
             WebDriverFactory.DismissAll();
         }
+
     }
+
+
+
+
+
+
 }
