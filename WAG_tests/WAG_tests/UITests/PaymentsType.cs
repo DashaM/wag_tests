@@ -16,7 +16,7 @@ namespace WAG_tests
         public void Viabill()
         {
                ClearBasket();
-               AddProductWithoutBonustoBasket("https://www.whiteaway.com/personlig-pleje/barbering-trimning/barbermaskine/product/braun-5030s-maleshaver/");
+               AddProductWithoutBonustoBasket("https://www.whiteaway.com/personlig-pleje/helbred/blodtryksmaaler/product/braun-vitalscan/");
                StartCheckOutFlowFromBasket();
                SelectDeliveryOptionSDA("//div[@class='list-group']/div/label[2]/div/div/div[1]/div/input");
                CheckOutFlowStep1SDA();
@@ -33,7 +33,7 @@ namespace WAG_tests
         public void MobilePay()
         {
             ClearBasket();
-            AddProductWithoutBonustoBasket("https://www.whiteaway.com/personlig-pleje/barbering-trimning/barbermaskine/product/braun-5030s-maleshaver/");
+            AddProductWithoutBonustoBasket("https://www.whiteaway.com/personlig-pleje/helbred/blodtryksmaaler/product/braun-vitalscan/");
             StartCheckOutFlowFromBasket();
             SelectDeliveryOptionSDA("//div[@class='list-group']/div/label[2]/div/div/div[1]/div/input");
             CheckOutFlowStep1SDA();
@@ -51,7 +51,7 @@ namespace WAG_tests
         public void Dankort()
         {
             ClearBasket();
-            AddProductWithoutBonustoBasket("https://www.whiteaway.com/personlig-pleje/barbering-trimning/barbermaskine/product/braun-5030s-maleshaver/");
+            AddProductWithoutBonustoBasket("https://www.whiteaway.com/personlig-pleje/helbred/blodtryksmaaler/product/braun-vitalscan/");
             StartCheckOutFlowFromBasket();
             SelectDeliveryOptionSDA("//div[@class='list-group']/div/label[2]/div/div/div[1]/div/input");
             CheckOutFlowStep1SDA();
@@ -67,7 +67,7 @@ namespace WAG_tests
         public void Mastercard()
         {
             ClearBasket();
-            AddProductWithoutBonustoBasket("https://www.whiteaway.com/personlig-pleje/barbering-trimning/barbermaskine/product/braun-5030s-maleshaver/");
+            AddProductWithoutBonustoBasket("https://www.whiteaway.com/personlig-pleje/helbred/blodtryksmaaler/product/braun-vitalscan/");
             StartCheckOutFlowFromBasket();
             SelectDeliveryOptionSDA("//div[@class='list-group']/div/label[2]/div/div/div[1]/div/input");
             CheckOutFlowStep1SDA();
@@ -83,7 +83,7 @@ namespace WAG_tests
         public void OtherAltapayCards()
         {
             ClearBasket();
-            AddProductWithoutBonustoBasket("https://www.whiteaway.com/personlig-pleje/barbering-trimning/barbermaskine/product/braun-5030s-maleshaver/");
+            AddProductWithoutBonustoBasket("https://www.whiteaway.com/personlig-pleje/helbred/blodtryksmaaler/product/braun-vitalscan/");
             StartCheckOutFlowFromBasket();
             SelectDeliveryOptionSDA("//div[@class='list-group']/div/label[2]/div/div/div[1]/div/input");
             CheckOutFlowStep1SDA();

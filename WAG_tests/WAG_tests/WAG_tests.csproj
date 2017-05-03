@@ -75,7 +75,7 @@
     <Compile Include="Finalizer.cs" />
     <Compile Include="Screenshot.cs" />
     <Compile Include="UITests\Basket.cs" />
-    <Compile Include="UITests\BuingProductsPaymentsType.cs" />
+    <Compile Include="UITests\PaymentsType.cs" />
     <Compile Include="WebDriverFactory.cs" />
     <Compile Include="TestBase.cs" />
     <Compile Include="UITests\BuingMDA.cs" />
