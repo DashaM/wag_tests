@@ -64,8 +64,7 @@ namespace WAG_tests
         public void BuingMDAWithSlots()
         {
 
-            try
-            {
+           
                 ClearBasket();
 
                 AddProductWithBonustoBasket(
@@ -79,8 +78,8 @@ namespace WAG_tests
                 IsDropCommentPresent();
                 CheckOutFlowLastStep();
                 FinalStep();
-            }
-            catch (Exception) { Screenshot.Snap(); }
+           
+           
 
         }
 
