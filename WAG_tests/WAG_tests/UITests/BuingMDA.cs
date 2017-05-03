@@ -78,8 +78,6 @@ namespace WAG_tests
                 IsDropCommentPresent();
                 CheckOutFlowLastStep();
                 FinalStep();
-           
-           
 
         }
 
