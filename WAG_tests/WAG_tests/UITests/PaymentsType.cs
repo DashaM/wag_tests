@@ -83,6 +83,7 @@ namespace WAG_tests
         public void OtherAltapayCards()
         {
             ClearBasket();
+
             AddProductWithoutBonustoBasket("https://www.whiteaway.com/personlig-pleje/helbred/blodtryksmaaler/product/braun-vitalscan/");
             StartCheckOutFlowFromBasket();
             SelectDeliveryOptionSDA("//div[@class='list-group']/div/label[2]/div/div/div[1]/div/input");
