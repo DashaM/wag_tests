@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Firefox;
@@ -14,15 +15,22 @@ namespace WAG_tests
 {
 
     [TestFixture()]
+
+   // [TestFixture(typeof(FirefoxDriver))]
+   // [TestFixture(typeof(ChromeDriver))]
+
     public class TestBase
     {
         public static IWebDriver firefox;
+      
       WebDriverWait wait;
 
         [SetUp]
         public void StartBrowser()
         {
+
             firefox = WebDriverFactory.GetDriver(DesiredCapabilities.Firefox());
+
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             firefox.Manage().Window.Maximize();
             firefox.Navigate().GoToUrl("http://whiteaway.com/");
