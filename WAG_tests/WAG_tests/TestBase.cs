@@ -443,7 +443,7 @@ namespace WAG_tests
         protected void FinalStep()
         {
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-            Assert.AreEqual("Vi sender dig snarest en bestillingsbekræftelse på den mail du har indtastet nedenfor.\r\nVi glæder os til at hjælpe dig med dit køb.", firefox.FindElement(By.XPath("//div[@id='content']/div[2]/div[3]/p[2]")).Text);
+//            Assert.AreEqual("Vi sender dig snarest en bestillingsbekræftelse på den mail du har indtastet nedenfor.\r\nVi glæder os til at hjælpe dig med dit køb.", firefox.FindElement(By.XPath("//div[@id='content']/div[2]/div[3]/p[2]")).Text);
             firefox.Navigate().GoToUrl("http://whiteaway.com/");
            // firefox.FindElement(By.XPath("/html/body/div[3]/header/div/a[1]/svg/use")).Click();
            // firefox.FindElement(By.LinkText("Til forsiden")).Click();
