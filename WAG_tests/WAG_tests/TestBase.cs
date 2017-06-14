@@ -16,9 +16,6 @@ namespace WAG_tests
 
     [TestFixture()]
 
-   // [TestFixture(typeof(FirefoxDriver))]
-   // [TestFixture(typeof(ChromeDriver))]
-
     public class TestBase
     {
         public static IWebDriver firefox;
@@ -495,6 +492,7 @@ namespace WAG_tests
 
         protected void SelectDeliveryOptionSDA(string deliveryxpath)
         {
+            Thread.Sleep(3000);
             firefox.FindElement(By.XPath(deliveryxpath)).Click();
 
              firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
