@@ -448,6 +448,7 @@ namespace WAG_tests
            // firefox.FindElement(By.XPath("/html/body/div[3]/header/div/a[1]/svg/use")).Click();
            // firefox.FindElement(By.LinkText("Til forsiden")).Click();
             Thread.Sleep(3000);
+            
         }
 
 
