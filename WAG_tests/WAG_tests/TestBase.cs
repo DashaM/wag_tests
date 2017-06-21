@@ -102,7 +102,9 @@ namespace WAG_tests
         {
             firefox.FindElement(By.CssSelector("a.search__suggest__see-all")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
-            Assert.AreEqual(searchrequest, firefox.FindElement(By.Id("page_headline")).Text);
+           // Assert.AreEqual(searchrequest, firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div[1]/div[1]/h1")).Text);
+            Assert.GreaterOrEqual(firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div[1]/div[1]/h1")).Text, searchrequest);
+        
         }
 
 
