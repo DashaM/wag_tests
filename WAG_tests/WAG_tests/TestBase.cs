@@ -181,8 +181,8 @@ namespace WAG_tests
                    .GoToUrl(productpageurl_2);
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                 Thread.Sleep(3000);
-              //  firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div[1]/section[3]/section[2]/div/div[2]")).Click();
-                firefox.FindElement(By.ClassName("vip__price-cta-and-favorites-wrap")).Click();
+                firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/div/div[2]/button[1]")).Click();
+              //  firefox.FindElement(By.ClassName("vip__price-cta-and-favorites-wrap")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
                 firefox.FindElement(By.LinkText("Gå til kurv")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
@@ -274,6 +274,7 @@ namespace WAG_tests
             firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div/div/div[2]/div[2]/div/div/label[2]/div/div/div[1]/div/div")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             firefox.FindElement(By.Id("label_for_services_call_number")).Clear();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             firefox.FindElement(By.Id("label_for_services_call_number")).SendKeys("77777777");
 
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
@@ -290,9 +291,9 @@ namespace WAG_tests
                 else
                 {
                     firefox.FindElement(
-                        By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[3]/div[2]/label"))
+                        By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[3]/div[2]/label/span"))
                         .Click();
-                    firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
                     firefox.FindElement(By.Id("comment")).Clear();
                     firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
                 }
