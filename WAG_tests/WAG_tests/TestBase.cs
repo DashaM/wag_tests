@@ -93,7 +93,7 @@ namespace WAG_tests
         {
             firefox.Navigate().GoToUrl(pageurl);
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
-            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/div[2]/div[2]/button[2]")).Click();
+            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/div[2]/div[2]/button")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
         }
 
@@ -208,7 +208,7 @@ namespace WAG_tests
                     .GoToUrl(productpageurl_1);
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                 Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/div[2]/div[2]/button[1]")).Click();
+                firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/div[2]/div[2]/div")).Click();
 //                firefox.FindElement(By.ClassName("vip__price-cta-and-favorites-wrap")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
 
@@ -216,8 +216,23 @@ namespace WAG_tests
                    .GoToUrl(productpageurl_2);
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                 Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/div/div[2]/button[1]")).Click();
-              //  firefox.FindElement(By.ClassName("vip__price-cta-and-favorites-wrap")).Click();
+              //  firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/div[2]/div[2]/div")).Click();
+
+                try
+                {
+                    firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/div[2]/div[2]/div")).Click();
+                    
+                }
+                catch (NoSuchElementException e)
+                {
+                    firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/div/div[2]/div/button")).Click();
+                }
+
+
+
+
+
+            //  firefox.FindElement(By.ClassName("vip__price-cta-and-favorites-wrap")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
                 firefox.FindElement(By.LinkText("Gå til kurv")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
@@ -309,7 +324,7 @@ namespace WAG_tests
             firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div/div/div[2]/div[2]/div/div/label[2]/div/div/div[1]/div/div")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             firefox.FindElement(By.Id("label_for_services_call_number")).Clear();
-            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             firefox.FindElement(By.Id("label_for_services_call_number")).SendKeys("77777777");
 
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
@@ -466,6 +481,7 @@ namespace WAG_tests
         protected void CheckOutFlowLastStep()
         {
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Thread.Sleep(3000);
             firefox.FindElement(By.CssSelector("span.control-indicator")).Click();
             firefox.FindElement(By.XPath("//button[@type='button']")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
