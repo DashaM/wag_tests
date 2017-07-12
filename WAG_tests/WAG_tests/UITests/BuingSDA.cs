@@ -34,10 +34,10 @@ namespace WAG_tests
         {
             ClearBasket();
                 //AddProductWithoutBonustoBasket("http://www.whiteaway.com/koekkenudstyr/blender/blender/product/kitchenaid-a-m-0-75l-krom/");
-            AddProductWithoutBonustoBasket("https://www.whiteaway.com/koekkenudstyr/kaffe-espresso/espressomaskine/product/delonghi-magnifica-s-ecam-21-117-b/");
+            AddProductWithoutBonustoBasket("https://www.whiteaway.com/personlig-pleje/haarpleje/curler/product/babyliss-3060e/");
                 StartCheckOutFlowFromBasket();
-                SelectServiceSDA("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[2]/div[2]/div[2]/div/div/div[1]/div[1]/label");
-                SelectDeliveryOptionSDA("//div[@class='list-group']/div/label[2]/div/div/div[1]/div/input");
+               // SelectServiceSDA("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label");
+               // SelectDeliveryOptionSDA("//div[@class='list-group']/div/label[2]/div/div/div[1]/div/input");
                 CheckOutFlowStep1SDA();
                 CheckOutFlowStep2SDA();
                 CheckOutFlowStep3PaymentMethod("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[4]/div[2]/div/label/div/div[1]/div/div/div[1]/span");

@@ -174,7 +174,7 @@ namespace WAG_tests
             firefox.Navigate().GoToUrl(productpageurl);
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             Thread.Sleep(3000);
-            firefox.FindElement(By.XPath("//div[@id='content']/div[3]/div/section[3]/div/div[2]/button")).Click();
+            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/div/div[2]/div")).Click();
             // firefox.FindElement(By.ClassName("vip__price-add-to-cart button button-forward button-lg js-add-to-cart js-click-track js-sniper-click")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(3000);
@@ -405,12 +405,27 @@ namespace WAG_tests
                 }
                 else
                 {
-                    firefox.FindElement(
-                        By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label"))
-                        .Click();
+                   // firefox.FindElement(
+                    //    By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label"))
+                    //    .Click();
+
+                    firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+                    Thread.Sleep(3000);
+                    try
+                    {
+                        firefox.FindElement(By.XPath("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label")).Click();
+
+                    }
+                    catch (NoSuchElementException e)
+                    {
+                        firefox.FindElement(By.XPath("//div[@class='list-group']/div/label[2]/div/div/div[1]/div/input")).Click();
+                    }
+
                     firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                     firefox.FindElement(By.Id("comment")).Clear();
                     firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
+
+
                 }
             } 
 
