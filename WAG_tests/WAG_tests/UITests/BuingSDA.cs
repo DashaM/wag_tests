@@ -37,7 +37,7 @@ namespace WAG_tests
             AddProductWithoutBonustoBasket("https://www.whiteaway.com/personlig-pleje/haarpleje/curler/product/babyliss-3060e/");
                 StartCheckOutFlowFromBasket();
                // SelectServiceSDA("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[2]/div[2]/label");
-               // SelectDeliveryOptionSDA("//div[@class='list-group']/div/label[2]/div/div/div[1]/div/input");
+                SelectDeliveryOptionSDA("/html/body/div[4]/div/div/div/ng-view/div[3]/form/div[1]/div[1]/div/div/div[2]/div/div/div/label/div/div/div[1]/div/div");
                 CheckOutFlowStep1SDA();
                 CheckOutFlowStep2SDA();
                 CheckOutFlowStep3PaymentMethod("/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[1]/div[2]/div[4]/div[2]/div/label/div/div[1]/div/div/div[1]/span");
