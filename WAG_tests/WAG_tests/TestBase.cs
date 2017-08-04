@@ -49,7 +49,7 @@ namespace WAG_tests
         {
             //firefox.FindElement(By.LinkText("Log ind")).Click();
             firefox.Navigate().GoToUrl("http://whiteaway.com/login/");
-            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             firefox.FindElement(By.Id("email_address")).SendKeys(login);
             firefox.FindElement(By.Id("password")).SendKeys(pass);
             firefox.FindElement(By.XPath("//button[@type='submit']")).Click();
