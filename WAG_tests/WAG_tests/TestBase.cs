@@ -174,7 +174,7 @@ namespace WAG_tests
             firefox.Navigate().GoToUrl(productpageurl);
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             Thread.Sleep(3000);
-            firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div[1]/section[3]/div/div[2]/div[1]")).Click();
+            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/div/div[2]/div[1]")).Click();
             // firefox.FindElement(By.ClassName("vip__price-add-to-cart button button-forward button-lg js-add-to-cart js-click-track js-sniper-click")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(3000);
@@ -189,9 +189,9 @@ namespace WAG_tests
         protected void AddProductWithBonustoBasket(string productpageurl)
         {
             firefox.Navigate().GoToUrl(productpageurl);
-            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             Thread.Sleep(3000);
-            firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div[1]/section[3]/div[2]/div[2]/div[1]")).Click();
+            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/div[2]/div[2]/div[1]")).Click();
            // firefox.FindElement(By.ClassName("vip__price-cta-and-favorites-wrap")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             firefox.FindElement(By.LinkText("Gå til kurv")).Click();
@@ -571,8 +571,9 @@ namespace WAG_tests
         {
             firefox.FindElement(By.Id("postcode")).Clear();
             firefox.FindElement(By.Id("postcode")).SendKeys(postcode);
-            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(40));
             Thread.Sleep(4000);
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(40));
             firefox.FindElement(By.XPath(servicexpath)).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             Thread.Sleep(4000);
