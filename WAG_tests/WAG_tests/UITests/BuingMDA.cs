@@ -20,7 +20,7 @@ namespace WAG_tests
         {
             ClearBasket();
 
-            AddProductWithBonustoBasket("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/lg-testvinder/");
+            AddProductWithBonustoBasket("https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/lg-q4j5tn4w/");
                 StartCheckOutFlowFromBasket();
                 SelectServiceMDA("3600", "/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[2]/div[2]/div[2]/div/div[2]/div[1]/div[1]/label");
                 CheckOutFlowStep0Delivery();
@@ -68,7 +68,7 @@ namespace WAG_tests
                 ClearBasket();
 
                 AddProductWithBonustoBasket(
-                    "https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/lg-testvinder/");
+                    "https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/lg-q4j5tn4w/");
                 StartCheckOutFlowFromBasket();
                 SelectServiceMDA("3600");
                 CheckOutFlowStep0Delivery();
@@ -91,7 +91,7 @@ namespace WAG_tests
             ClearBasket();
             
                 Add2ProducsToBasket(
-                   "https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/lg-testvinder/",
+                   "https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/lg-q4j5tn4w/",
                    "https://www.whiteaway.com/koekkenudstyr/blender/blender/product/raw-pro-x1500-black-2-hk-2-0-l-2-generation/");
 
                 StartCheckOutFlowFromBasket();
