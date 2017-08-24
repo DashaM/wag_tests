@@ -43,7 +43,7 @@ namespace WAG_tests
             ClearBasket();
               
             Add2ProducsToBasket(
-                "https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/lg-testvinder/",
+                "https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/lg-q4j5tn4w/",
                 "https://www.whiteaway.com/hvidevarer/komfur/induktions-komfur/product/gorenje-ei67322ax/");
 
                 StartCheckOutFlowFromBasket();
