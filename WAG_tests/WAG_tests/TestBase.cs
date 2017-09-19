@@ -495,18 +495,18 @@ namespace WAG_tests
 
         protected void CheckOutFlowLastStep()
         {
-            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             Thread.Sleep(3000);
             firefox.FindElement(By.CssSelector("span.control-indicator")).Click();
             firefox.FindElement(By.XPath("//button[@type='button']")).Click();
-            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             Thread.Sleep(3000);
            
         }
 
         protected void FinalStep()
         {
-            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
 //            Assert.AreEqual("Vi sender dig snarest en bestillingsbekræftelse på den mail du har indtastet nedenfor.\r\nVi glæder os til at hjælpe dig med dit køb.", firefox.FindElement(By.XPath("//div[@id='content']/div[2]/div[3]/p[2]")).Text);
             firefox.Navigate().GoToUrl("http://whiteaway.com/");
            // firefox.FindElement(By.XPath("/html/body/div[3]/header/div/a[1]/svg/use")).Click();
