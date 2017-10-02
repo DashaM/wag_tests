@@ -19,7 +19,7 @@ namespace WAG_tests
         public void AddToFavoritesList()
         {
             AddProductToFavorits("https://www.whiteaway.com/hvidevarer/toerretumbler/kondens-toerretumbler/product/aeg-t8dem842e/");
-            OpenFavoritesList("AEG T8DEM842E");
+            OpenFavoritesList("T8DEM842E");
         }
 
 
@@ -29,7 +29,7 @@ namespace WAG_tests
         public void DeleteFromFavoritesList()
         {
             AddProductToFavorits("https://www.whiteaway.com/hvidevarer/toerretumbler/kondens-toerretumbler/product/aeg-t8dem842e/");
-            OpenFavoritesList("AEG T8DEM842E");
+            OpenFavoritesList("T8DEM842E");
             DeleteFavoriteProduct();
         }
 

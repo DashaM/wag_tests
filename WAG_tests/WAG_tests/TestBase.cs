@@ -93,7 +93,7 @@ namespace WAG_tests
         {
             firefox.Navigate().GoToUrl(pageurl);
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
-            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/div[2]/div[2]/button")).Click();
+            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/div[2]/div[2]/div[2]")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
         }
 
@@ -103,8 +103,8 @@ namespace WAG_tests
             
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
             firefox.FindElement(By.ClassName("favorites-widget__icon")).Click();
-            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-            Assert.That(firefox.FindElement(By.XPath("/html/body/div[3]/header/div/div[3]/div[2]/div[2]/ul/li/a/span[1]")).Text, Is.StringContaining(productname)); 
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
+            Assert.That(firefox.FindElement(By.XPath("/html/body/div[3]/header/div/div[3]/div[2]/div/div[2]/div/div[4]")).Text, Is.StringContaining(productname)); 
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
         }
 
