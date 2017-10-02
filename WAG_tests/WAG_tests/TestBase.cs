@@ -345,6 +345,7 @@ namespace WAG_tests
                         .Click();
                     firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
                     firefox.FindElement(By.Id("comment")).Clear();
+                    firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
                     firefox.FindElement(By.Id("comment")).SendKeys("+drop+");
                 }
             }
