@@ -76,6 +76,7 @@
     <Compile Include="Screenshot.cs" />
     <Compile Include="UITests\Basket.cs" />
     <Compile Include="UITests\AddToFavorites.cs" />
+    <Compile Include="UITests\NewCOF.cs" />
     <Compile Include="UITests\PaymentsType.cs" />
     <Compile Include="WebDriverFactory.cs" />
     <Compile Include="TestBase.cs" />

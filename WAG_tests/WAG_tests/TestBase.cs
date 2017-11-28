@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Management.Instrumentation;
 using System.Threading;
 using System.Windows.Forms;
 using OpenQA.Selenium;
@@ -19,6 +20,7 @@ namespace WAG_tests
     public class TestBase
     {
         public static IWebDriver firefox;
+        private Cookie myCookie = new Cookie("cof_checkout_process", "onepage");
       
       WebDriverWait wait;
 
@@ -27,6 +29,8 @@ namespace WAG_tests
         {
 
             firefox = WebDriverFactory.GetDriver(DesiredCapabilities.Firefox());
+
+
 
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             firefox.Manage().Window.Maximize();
@@ -101,9 +105,9 @@ namespace WAG_tests
         protected void OpenFavoritesList(string productname)
         {
             
-            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             firefox.FindElement(By.ClassName("favorites-widget__icon")).Click();
-            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(35));
             Assert.That(firefox.FindElement(By.XPath("/html/body/div[3]/header/div/div[3]/div[2]/div/div[2]/div/div[4]")).Text, Is.StringContaining(productname)); 
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
         }
@@ -666,6 +670,16 @@ namespace WAG_tests
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Assert.AreEqual(": 3", firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div[2]/div[2]/div[1]/div[1]/div/div/div[2]/div[1]/div[4]/span")).Text);
         }
+
+
+
+        protected void AddNewCofCookie()
+        {
+            firefox.Manage().Cookies.DeleteAllCookies();
+           firefox.Manage().Cookies.AddCookie(myCookie);
+        }
+      
+
 
 
     }
