@@ -604,7 +604,8 @@ namespace WAG_tests
         {
             Thread.Sleep(5000);
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(40));
-            firefox.FindElement(By.LinkText("Tilbage til butik")).Click();
+            firefox.FindElement(By.XPath("/html/body/app/div/layout/vbc-free/div/vbc-email/vbc-email-form/form/div/button[1]")).Click();
+            firefox.FindElement(By.XPath("/html/body/app/vbc-cancel-modal/div/div/div[2]/button[2]")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
 
         }
