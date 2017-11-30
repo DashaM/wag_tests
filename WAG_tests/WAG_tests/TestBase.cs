@@ -669,7 +669,7 @@ namespace WAG_tests
         protected void IsFilterApplied()
         {
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-            Assert.AreEqual(": 3", firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div[2]/div[2]/div[1]/div[1]/div/div/div[2]/div[1]/div[4]/span")).Text);
+            Assert.AreEqual(": 6", firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div[2]/div[2]/div[1]/div[1]/div/div/div[2]/div[1]/div[4]/span")).Text);
         }
 
 
