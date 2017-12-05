@@ -488,6 +488,7 @@ namespace WAG_tests
 
         protected void CheckOutFlowStep3PaymentMethod(string paymentxpath)
         {
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             firefox.FindElement(By.XPath(paymentxpath)).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(3000);
