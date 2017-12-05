@@ -108,6 +108,7 @@ namespace WAG_tests
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             firefox.FindElement(By.ClassName("favorites-widget__icon")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(35));
+            Thread.Sleep(3000);
             Assert.That(firefox.FindElement(By.XPath("/html/body/div[3]/header/div/div[3]/div[2]/div/div[2]/div/div[4]")).Text, Is.StringContaining(productname)); 
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
         }

@@ -18,8 +18,8 @@ namespace WAG_tests
         [Test()]
         public void AddToFavoritesList()
         {
-            AddProductToFavorits("https://www.whiteaway.com/hvidevarer/toerretumbler/kondens-toerretumbler/product/aeg-t8dem842e/");
-            OpenFavoritesList("T8DEM842E");
+            AddProductToFavorits("https://www.whiteaway.com/hvidevarer/vaskemaskine/topbetjent-vaskemaskine/product/scandomestic-stl612/");
+            OpenFavoritesList("STL612");
         }
 
 
@@ -28,8 +28,8 @@ namespace WAG_tests
         [Test()]
         public void DeleteFromFavoritesList()
         {
-            AddProductToFavorits("https://www.whiteaway.com/hvidevarer/toerretumbler/kondens-toerretumbler/product/aeg-t8dem842e/");
-            OpenFavoritesList("T8DEM842E");
+            AddProductToFavorits("https://www.whiteaway.com/hvidevarer/vaskemaskine/topbetjent-vaskemaskine/product/scandomestic-stl612/");
+            OpenFavoritesList("STL612");
             DeleteFavoriteProduct();
         }
 
