@@ -44,7 +44,7 @@ namespace WAG_tests
               
             Add2ProducsToBasket(
                 "https://www.whiteaway.com/hvidevarer/vaskemaskine/frontbetjent-vaskemaskine/product/lg-q4j5tn4w/",
-                "https://www.whiteaway.com/hvidevarer/komfur/induktions-komfur/product/gorenje-ei67322ax/");
+                "https://www.whiteaway.com/hvidevarer/komfur/induktions-komfur/product/gorenje-eic67650nw/");
 
                 StartCheckOutFlowFromBasket();
                 SelectServiceMDA("8000", "/html/body/div[4]/div/div/div/ng-view/div[3]/div[1]/div[2]/div[2]/div[2]/div/div[1]/div[1]/div[1]/label");
