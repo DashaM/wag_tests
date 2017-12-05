@@ -539,6 +539,8 @@ namespace WAG_tests
 
         protected void StartCheckOutFlowFromBasket()
         {
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
+            Thread.Sleep(3000);
             firefox.FindElement(By.LinkText("Gå til bestilling")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             Thread.Sleep(3000);
@@ -671,7 +673,7 @@ namespace WAG_tests
         protected void IsFilterApplied()
         {
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-            Assert.AreEqual(": 6", firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div[2]/div[2]/div[1]/div[1]/div/div/div[2]/div[1]/div[4]/span")).Text);
+            Assert.AreEqual(": 6", firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div[2]/div[2]/div[1]/div[1]/div/div[1]/div[2]/div[1]/div[4]/div/span")).Text);
         }
 
 
