@@ -541,8 +541,9 @@ namespace WAG_tests
         {
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             Thread.Sleep(3000);
-            firefox.FindElement(By.LinkText("Gå til bestilling")).Click();
-//            firefox.FindElement(By.ClassName("btn btn-forward btn-lg btn-block ng-binding ng-scope")).Click();
+            firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
+           // firefox.FindElement(By.LinkText("Gå til bestilling")).Click();
+            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]/a")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             Thread.Sleep(3000);
         }
