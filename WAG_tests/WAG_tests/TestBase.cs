@@ -97,7 +97,7 @@ namespace WAG_tests
         {
             firefox.Navigate().GoToUrl(pageurl);
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
-            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/div[2]/div[2]/div[2]")).Click();
+            firefox.FindElement(By.XPath(".//*[@id='content']/div[3]/div[1]/section[2]/div[2]/div[2]/div[2]")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
         }
 
@@ -542,8 +542,8 @@ namespace WAG_tests
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             Thread.Sleep(3000);
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-           // firefox.FindElement(By.LinkText("Gå til bestilling")).Click();
-            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]/a")).Click();
+            firefox.FindElement(By.LinkText("Gå til bestilling")).Click();
+            //firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]/a")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             Thread.Sleep(3000);
         }
