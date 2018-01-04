@@ -179,7 +179,7 @@ namespace WAG_tests
             firefox.Navigate().GoToUrl(productpageurl);
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             Thread.Sleep(3000);
-            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/div/div[2]/div[1]")).Click();
+            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[2]/div[1]/div[2]/div[1]")).Click();
             // firefox.FindElement(By.ClassName("vip__price-add-to-cart button button-forward button-lg js-add-to-cart js-click-track js-sniper-click")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(3000);
