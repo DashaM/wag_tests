@@ -552,7 +552,7 @@ namespace WAG_tests
                 firefox.FindElement(By.LinkText("Gå til bestilling")).Click();
 
             }
-            catch (NoSuchElementException e)
+            catch (NoSuchElementException)
             {
                 firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div/div/ng-view/div/div[1]/div[1]/div/div/div[2]")).Click();
             }
