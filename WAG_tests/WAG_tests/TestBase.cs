@@ -196,7 +196,7 @@ namespace WAG_tests
             firefox.Navigate().GoToUrl(productpageurl);
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             Thread.Sleep(3000);
-            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/div[2]/div[2]/div[1]")).Click();
+            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[2]/div[2]/div[2]/div[1]")).Click();
            // firefox.FindElement(By.ClassName("vip__price-cta-and-favorites-wrap")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             firefox.FindElement(By.LinkText("Gå til kurv")).Click();
@@ -213,7 +213,7 @@ namespace WAG_tests
                     .GoToUrl(productpageurl_1);
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
                 Thread.Sleep(3000);
-                firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/div[2]/div[2]/div")).Click();
+                firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[2]/div[2]/div[2]/div[1]")).Click();
 //                firefox.FindElement(By.ClassName("vip__price-cta-and-favorites-wrap")).Click();
                 firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
 
@@ -225,12 +225,12 @@ namespace WAG_tests
 
                 try
                 {
-                    firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/div[2]/div[2]/div")).Click();
+                    firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[2]/div[1]/div[2]/div[1]")).Click();
                     
                 }
                 catch (NoSuchElementException e)
                 {
-                    firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[3]/div/div[2]/div/button")).Click();
+                    firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[2]/div[2]/div[2]/div[1]")).Click();
                 }
 
 
