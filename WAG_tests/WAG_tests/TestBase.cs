@@ -34,7 +34,8 @@ namespace WAG_tests
 
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             firefox.Manage().Window.Maximize();
-            firefox.Navigate().GoToUrl("http://whiteaway.com/");
+           // firefox.Navigate().GoToUrl("http://whiteaway.com/");
+            firefox.Navigate().GoToUrl("http://tretti.se/");
         }
 
 
@@ -42,6 +43,15 @@ namespace WAG_tests
 
 
         // methods for all tests
+
+        protected void AddCookieForNewCof()
+        {
+            firefox.Manage().Cookies.DeleteAllCookies();
+            firefox.Manage().Cookies.AddCookie(myCookie);
+            firefox.Navigate().Refresh();
+        }
+
+
         protected void Logout()
         {
             firefox.FindElement(By.LinkText("Log af")).Click();
@@ -196,10 +206,20 @@ namespace WAG_tests
             firefox.Navigate().GoToUrl(productpageurl);
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             Thread.Sleep(3000);
-            firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[2]/div[2]/div[2]/div[1]")).Click();
-           // firefox.FindElement(By.ClassName("vip__price-cta-and-favorites-wrap")).Click();
+            
+                firefox.FindElement(By.XPath("/html/body/div[3]/div[3]/div[1]/section[2]/div[2]/div[2]/div[1]")).Click();
+            // firefox.FindElement(By.ClassName("vip__price-cta-and-favorites-wrap")).Click();
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-            firefox.FindElement(By.LinkText("Gå til kurv")).Click();
+
+            try
+            {
+                firefox.FindElement(By.LinkText("Gå til kurv")).Click();
+            }
+            catch (NoSuchElementException)
+            {
+                firefox.FindElement(By.LinkText("Gå till kassan")).Click();
+            }
+
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Thread.Sleep(4000);
         }
@@ -691,15 +711,6 @@ namespace WAG_tests
             firefox.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Assert.AreEqual(": 6", firefox.FindElement(By.XPath("/html/body/div[3]/div[4]/div[2]/div[2]/div[1]/div[1]/div/div[1]/div[2]/div[1]/div[4]/div/span")).Text);
         }
-
-
-
-        protected void AddNewCofCookie()
-        {
-            firefox.Manage().Cookies.DeleteAllCookies();
-           firefox.Manage().Cookies.AddCookie(myCookie);
-        }
-      
 
 
 
